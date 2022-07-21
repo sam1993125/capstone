@@ -1,2 +1,1459 @@
   [1m[35m (198.1ms)[0m  [1m[35mCREATE DATABASE "heroku_deploy_development" ENCODING = 'unicode'[0m
   [1m[35m (112.9ms)[0m  [1m[35mCREATE DATABASE "heroku_deploy_test" ENCODING = 'unicode'[0m
+  [1m[35m (24.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8755710264044481150)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220720133005)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "fullname" character varying, "password_digest" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720133005"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-20 13:56:55.830550"], ["updated_at", "2022-07-20 13:56:55.830550"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8755710264044481150)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8755710264044481150)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8755710264044481150)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8755710264044481150)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8755710264044481150)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8755710264044481150)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8755710264044481150)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 523], ["username", "yixin"], ["fullname", "Yixin"], ["password_digest", "$2a$12$FrOGSCQrhBmPT.7tX8CXLejhy.fjyzRoBIkyTWyZy/bavHmRsYCqO"], ["email", "who@gmail.com"], ["created_at", "2022-07-20 14:04:35.065483"], ["updated_at", "2022-07-20 14:04:35.065483"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 216], ["username", "sam"], ["fullname", "Brad Pitt"], ["password_digest", "$2a$12$Or.FS5Cxfgjh2LCNFLtmB.zH9QCvp.2GnOREWYfKVM6nvPTS55FYS"], ["email", "sam19931225@gmail.com"], ["created_at", "2022-07-20 14:04:35.312787"], ["updated_at", "2022-07-20 14:04:35.312787"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 480], ["username", "demo"], ["fullname", "Whoever"], ["password_digest", "$2a$12$cTYKji7vOQJ3WTeYyNCIMOyPl5C0aYAAQTdeVMRvkVQeRLzT1FtpS"], ["email", "demo@gmail.com"], ["created_at", "2022-07-20 14:04:35.557914"], ["updated_at", "2022-07-20 14:04:35.557914"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 12:31:41 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 12:31:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:31:43 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:31:43 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:31:43 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/signup" for 127.0.0.1 at 2022-07-20 12:32:02 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/signup"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:32:08 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:32:09 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:32:10 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:32:10 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:32:10 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:32:10 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:32:10 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:32:11 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:32:11 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:32:11 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 12:33:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 12:33:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:33:48 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:33:49 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2022-07-20 12:33:49 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 12:34:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 12:34:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 12:34:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 12:34:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 12:34:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 12:34:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started POST "/login" for 127.0.0.1 at 2022-07-20 12:35:14 -0400
+  
+SyntaxError (/Users/yixin/Desktop/capstone/app/controllers/application_controller.rb:31: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/application_controller.rb:31: syntax error, unexpected `end', expecting end-of-input
+app/controllers/application_controller.rb:31: syntax error, unexpected `end', expecting end-of-input
+app/controllers/sessions_controller.rb:1:in `<top (required)>'
+Started POST "/login" for 127.0.0.1 at 2022-07-20 12:35:16 -0400
+  
+SyntaxError (/Users/yixin/Desktop/capstone/app/controllers/application_controller.rb:31: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/application_controller.rb:31: syntax error, unexpected `end', expecting end-of-input
+app/controllers/application_controller.rb:31: syntax error, unexpected `end', expecting end-of-input
+app/controllers/sessions_controller.rb:1:in `<top (required)>'
+Started POST "/login" for 127.0.0.1 at 2022-07-20 12:35:47 -0400
+  
+ArgumentError (Before process_action callback :authenticate_user has not been defined):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/sessions_controller.rb:1:in `<top (required)>'
+Started POST "/login" for 127.0.0.1 at 2022-07-20 12:37:39 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"yixin", "password"=>"[FILTERED]", "session"=>{"username"=>"yixin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 523], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.27ms)
+Completed 200 OK in 307ms (Views: 3.5ms | ActiveRecord: 16.1ms | Allocations: 10783)
+
+
+Started GET "/api/posts" for 127.0.0.1 at 2022-07-20 12:37:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/posts"):
+  
+Started GET "/api/posts" for 127.0.0.1 at 2022-07-20 12:37:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/posts"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 12:37:42 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 226)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-20 12:38:45 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"yixin", "password"=>"[FILTERED]", "session"=>{"username"=>"yixin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 523], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 281ms (Views: 1.0ms | ActiveRecord: 0.8ms | Allocations: 1364)
+
+
+Started GET "/api/posts" for 127.0.0.1 at 2022-07-20 12:38:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/posts"):
+  
+Started GET "/api/posts" for 127.0.0.1 at 2022-07-20 12:38:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/posts"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 12:38:47 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 220)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-20 12:39:36 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"yixin", "password"=>"[FILTERED]", "session"=>{"username"=>"yixin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 523], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 282ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 1387)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-07-20 12:39:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started GET "/posts" for 127.0.0.1 at 2022-07-20 12:39:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 12:40:12 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 224)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-20 13:30:35 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"yixin", "password"=>"[FILTERED]", "session"=>{"username"=>"yixin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 287ms (Views: 2.4ms | ActiveRecord: 8.0ms | Allocations: 4299)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-20 13:30:38 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"yixin", "password"=>"[FILTERED]", "session"=>{"username"=>"yixin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 401 Unauthorized in 283ms (Views: 1.5ms | ActiveRecord: 0.9ms | Allocations: 1384)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-20 13:30:39 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"yixin", "password"=>"[FILTERED]", "session"=>{"username"=>"yixin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 401 Unauthorized in 288ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 1387)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-20 13:30:49 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"yixin", "password"=>"[FILTERED]", "session"=>{"username"=>"yixin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 523], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.26ms)
+Completed 200 OK in 285ms (Views: 1.6ms | ActiveRecord: 0.9ms | Allocations: 1364)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-07-20 13:30:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started GET "/posts" for 127.0.0.1 at 2022-07-20 13:30:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 13:30:51 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 214)
+
+
+Started POST "/api/signup" for 127.0.0.1 at 2022-07-20 13:31:43 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/signup"):
+  
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 13:43:28 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"12345", "password"=>"[FILTERED]", "fullname"=>"12345", "email"=>"sam19931225@gmail.com", "user"=>{"username"=>"12345", "fullname"=>"12345", "email"=>"sam19931225@gmail.com"}}
+[31mUnpermitted parameters: :fullname, :email, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (583.22ms)
+Completed 422 Unprocessable Entity in 891ms (Views: 585.4ms | ActiveRecord: 11.8ms | Allocations: 700014)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 13:45:14 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"12345", "password"=>"[FILTERED]", "fullname"=>"12345", "email"=>"sam19931225@gmail.com", "user"=>{"username"=>"12345", "fullname"=>"12345", "email"=>"sam19931225@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam19931225@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam19931225@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 422 Unprocessable Entity in 280ms (Views: 1.4ms | ActiveRecord: 16.6ms | Allocations: 7982)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 13:46:38 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"12345", "password"=>"[FILTERED]", "fullname"=>"12345", "email"=>"sam19931225@gmail.com", "user"=>{"username"=>"12345", "fullname"=>"12345", "email"=>"sam19931225@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam19931225@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam19931225@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 422 Unprocessable Entity in 281ms (Views: 1.2ms | ActiveRecord: 4.0ms | Allocations: 7850)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 13:50:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 13:50:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 13:50:20 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"12345", "password"=>"[FILTERED]", "fullname"=>"12345", "email"=>"12345@gmail.com", "user"=>{"username"=>"12345", "fullname"=>"12345", "email"=>"12345@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "12345@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "12345"], ["fullname", "12345"], ["password_digest", "$2a$12$DZGeFEntwKqurSwKeV5CwOzxC390lrL2jwteAJqZZHcEo8b4Z8/LC"], ["email", "12345@gmail.com"], ["created_at", "2022-07-20 17:50:21.270830"], ["updated_at", "2022-07-20 17:50:21.270830"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "12345"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "12345@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.1ms)
+Completed 200 OK in 297ms (Views: 1.0ms | ActiveRecord: 11.4ms | Allocations: 8393)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-07-20 13:50:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started GET "/posts" for 127.0.0.1 at 2022-07-20 13:50:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 13:53:15 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 227)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 13:53:29 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"345", "password"=>"[FILTERED]", "fullname"=>"345", "email"=>"345@gmail.com", "user"=>{"username"=>"345", "fullname"=>"345", "email"=>"345@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "345@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "345"], ["fullname", "345"], ["password_digest", "$2a$12$5ei2ukGGytIHJp.tnWWE6OnG1xdQJShzwjllK/Py/Q3IeRW6JlZRK"], ["email", "345@gmail.com"], ["created_at", "2022-07-20 17:53:29.854566"], ["updated_at", "2022-07-20 17:53:29.854566"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "345"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "345@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.08ms)
+Completed 200 OK in 296ms (Views: 1.0ms | ActiveRecord: 7.2ms | Allocations: 8291)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-07-20 13:53:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started GET "/posts" for 127.0.0.1 at 2022-07-20 13:53:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 13:53:57 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 13:53:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 13:53:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 13:56:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2022-07-20 13:56:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/me"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-20 13:59:43 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 401 Unauthorized in 38ms (Views: 2.0ms | ActiveRecord: 16.5ms | Allocations: 4294)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-20 14:15:47 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"yixin", "password"=>"[FILTERED]", "session"=>{"username"=>"yixin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 523], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.33ms)
+Completed 200 OK in 310ms (Views: 2.0ms | ActiveRecord: 11.6ms | Allocations: 4279)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-07-20 14:15:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started GET "/posts" for 127.0.0.1 at 2022-07-20 14:15:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 14:15:49 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 217)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 14:41:04 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 32ms (Views: 1.5ms | ActiveRecord: 10.5ms | Allocations: 4165)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 14:41:04 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 1399)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 14:54:05 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"", "password"=>"[FILTERED]", "fullname"=>"", "email"=>"sam19931225@gmail.com", "user"=>{"username"=>"", "fullname"=>"", "email"=>"sam19931225@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (6.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam19931225@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam19931225@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.64ms)
+Completed 422 Unprocessable Entity in 49ms (Views: 7.2ms | ActiveRecord: 13.8ms | Allocations: 8580)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 14:58:45 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 43ms (Views: 1.1ms | ActiveRecord: 0.7ms | Allocations: 1394)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 14:58:45 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 1393)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 15:58:43 -0400
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 4 pending migrations:
+
+20220720191016_create_words.rb
+20220720191640_create_userwords.rb
+20220720193438_create_tags.rb
+20220720195633_create_word_tags.rb
+
+
+):
+  
+activerecord (6.1.6.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.6.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.6.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activesupport (6.1.6.1) lib/active_support/evented_file_update_checker.rb:65:in `execute_if_updated'
+activerecord (6.1.6.1) lib/active_record/migration.rb:597:in `block in call'
+activerecord (6.1.6.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.6.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.6.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+railties (6.1.6.1) lib/rails/engine.rb:539:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/me" for 127.0.0.1 at 2022-07-20 15:58:44 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 4 pending migrations:
+
+20220720191016_create_words.rb
+20220720191640_create_userwords.rb
+20220720193438_create_tags.rb
+20220720195633_create_word_tags.rb
+
+
+):
+  
+activerecord (6.1.6.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.6.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.6.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.6.1) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.6.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.6.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.6.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+railties (6.1.6.1) lib/rails/engine.rb:539:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/login" for 127.0.0.1 at 2022-07-20 15:58:52 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 4 pending migrations:
+
+20220720191016_create_words.rb
+20220720191640_create_userwords.rb
+20220720193438_create_tags.rb
+20220720195633_create_word_tags.rb
+
+
+):
+  
+activerecord (6.1.6.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.6.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.6.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.6.1) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.6.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.6.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.6.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+railties (6.1.6.1) lib/rails/engine.rb:539:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/login" for 127.0.0.1 at 2022-07-20 15:58:53 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 4 pending migrations:
+
+20220720191016_create_words.rb
+20220720191640_create_userwords.rb
+20220720193438_create_tags.rb
+20220720195633_create_word_tags.rb
+
+
+):
+  
+activerecord (6.1.6.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.6.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.6.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.6.1) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.6.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.6.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.6.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+railties (6.1.6.1) lib/rails/engine.rb:539:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8755710264044481150)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWords (20220720191016)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "words" ("id" bigserial primary key, "word" character varying, "definition" text, "example" text, "written_by" character varying, "written_on" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720191016"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUserwords (20220720191640)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "userwords" ("id" bigserial primary key, "user_id" integer, "word_id" integer, "word" character varying, "definition" text, "example" text, "written_by" character varying, "written_on" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720191640"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTags (20220720193438)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720193438"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWordTags (20220720195633)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "word_tags" ("id" bigserial primary key, "word_id" integer, "tag_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720195633"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8755710264044481150)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/login" for 127.0.0.1 at 2022-07-20 15:59:20 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"yixin", "password"=>"[FILTERED]", "session"=>{"username"=>"yixin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 523], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.22ms)
+Completed 200 OK in 291ms (Views: 3.1ms | ActiveRecord: 7.2ms | Allocations: 5501)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-07-20 15:59:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started GET "/posts" for 127.0.0.1 at 2022-07-20 15:59:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 15:59:48 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-20 15:59:52 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"yixin", "password"=>"[FILTERED]", "session"=>{"username"=>"yixin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 523], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.2ms)
+Completed 200 OK in 290ms (Views: 4.4ms | ActiveRecord: 0.8ms | Allocations: 1371)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 15:59:58 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 221)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:00:07 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"12345", "password"=>"[FILTERED]", "fullname"=>"12345", "email"=>"12345@gmail.com", "user"=>{"username"=>"12345", "fullname"=>"12345", "email"=>"12345@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "12345@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "12345@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.66ms)
+Completed 422 Unprocessable Entity in 291ms (Views: 2.8ms | ActiveRecord: 1.0ms | Allocations: 5648)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "userwords" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL;ALTER TABLE "word_tags" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (15.3ms)[0m  [1m[35mTRUNCATE TABLE "users", "words", "userwords", "tags", "word_tags"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "word_tags" ENABLE TRIGGER ALL;ALTER TABLE "userwords" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "who@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 867], ["username", "yixin"], ["fullname", "Yixin"], ["password_digest", "$2a$12$FAdwa6MPIc/ZLlThdTsIVue/p39rhMrjNQNHALJHPDwcM8Ng5xDgC"], ["email", "who@gmail.com"], ["created_at", "2022-07-20 20:00:46.964823"], ["updated_at", "2022-07-20 20:00:46.964823"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sam"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam19931225@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 201], ["username", "sam"], ["fullname", "Brad Pitt"], ["password_digest", "$2a$12$5SAjVDCknDnzStj88NEV8.uzHX4qzSBGMGep.t5Mw9yf1s5wxYKZC"], ["email", "sam19931225@gmail.com"], ["created_at", "2022-07-20 20:00:47.211127"], ["updated_at", "2022-07-20 20:00:47.211127"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 284], ["username", "demo"], ["fullname", "Whoever"], ["password_digest", "$2a$12$qT9CSHLxBgCZ0V2X8dQQVeLAEdBJSvcbVHz4ew9EXYSVbYTneewnu"], ["email", "demo@gmail.com"], ["created_at", "2022-07-20 20:00:47.456457"], ["updated_at", "2022-07-20 20:00:47.456457"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:00:58 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"12345", "password"=>"[FILTERED]", "fullname"=>"12345", "email"=>"12345@gmail.com", "user"=>{"username"=>"12345", "fullname"=>"12345", "email"=>"12345@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "12345@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "12345"], ["fullname", "12345"], ["password_digest", "$2a$12$I/9BtQgndLR7No8jaRv/hugquJOw7plppTIDy/fzZvJ.wmC/BoKgS"], ["email", "12345@gmail.com"], ["created_at", "2022-07-20 20:00:59.007294"], ["updated_at", "2022-07-20 20:00:59.007294"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "12345"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "12345@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 290ms (Views: 0.6ms | ActiveRecord: 3.5ms | Allocations: 5320)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "word_tags" DISABLE TRIGGER ALL;ALTER TABLE "userwords" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (14.3ms)[0m  [1m[35mTRUNCATE TABLE "users", "words", "word_tags", "userwords", "tags"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "word_tags" ENABLE TRIGGER ALL;ALTER TABLE "userwords" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "who@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 746], ["username", "yixin"], ["fullname", "Yixin"], ["password_digest", "$2a$12$nxtolGfOuNv2oAtYAIx9Zeh413t36YXTbCuUrFInE4AvRbtR.ZBbS"], ["email", "who@gmail.com"], ["created_at", "2022-07-20 20:01:15.911852"], ["updated_at", "2022-07-20 20:01:15.911852"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sam"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam19931225@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 660], ["username", "sam"], ["fullname", "Brad Pitt"], ["password_digest", "$2a$12$ngR2v4os9nxkKX5717a5S.SACR9Ur2GUGp9pDdOjZ5PRyFWBfPXnG"], ["email", "sam19931225@gmail.com"], ["created_at", "2022-07-20 20:01:16.159416"], ["updated_at", "2022-07-20 20:01:16.159416"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 314], ["username", "demo"], ["fullname", "Whoever"], ["password_digest", "$2a$12$SFF8WqaVktbds3pPUunUYO.tFMcM4dHKrrFH3QMMRumEZMxYptAhG"], ["email", "demo@gmail.com"], ["created_at", "2022-07-20 20:01:16.405850"], ["updated_at", "2022-07-20 20:01:16.405850"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 16:01:28 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 227)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:03:31 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"12345", "password"=>"[FILTERED]", "fullname"=>"12345", "email"=>"12345@gmail.com", "user"=>{"username"=>"12345", "fullname"=>"12345", "email"=>"12345@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "12345@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "12345"], ["fullname", "12345"], ["password_digest", "$2a$12$a2iWhZL9knhGFb1/btkvg.nKWEcgsWxUkJJ4AYI82uS2ng4IYK5hG"], ["email", "12345@gmail.com"], ["created_at", "2022-07-20 20:03:31.800801"], ["updated_at", "2022-07-20 20:03:31.800801"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "12345"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "12345@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 294ms (Views: 0.8ms | ActiveRecord: 3.0ms | Allocations: 5319)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:04:49 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.26ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 898)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:04:50 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 898)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:04:51 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.29ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 898)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:04:51 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.38ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 898)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:04:51 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.3ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:04:51 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.39ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 890)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:04:51 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.27ms)
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 896)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:04:51 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 1.5ms | Allocations: 896)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 16:04:52 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 221)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:17:40 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 401 Unauthorized in 48ms (Views: 1.0ms | ActiveRecord: 15.5ms | Allocations: 5104)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:17:41 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1409)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:17:58 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"abcd", "password"=>"[FILTERED]", "fullname"=>"abcd", "email"=>"abcd@gmail.com", "user"=>{"username"=>"abcd", "fullname"=>"abcd", "email"=>"abcd@gmail.com"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abcd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abcd@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abcd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abcd@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.39ms)
+Completed 422 Unprocessable Entity in 32ms (Views: 4.0ms | ActiveRecord: 5.2ms | Allocations: 7590)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:18:00 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"abcd", "password"=>"[FILTERED]", "fullname"=>"abcd", "email"=>"abcd@gmail.com", "user"=>{"username"=>"abcd", "fullname"=>"abcd", "email"=>"abcd@gmail.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abcd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abcd@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abcd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abcd@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.81ms)
+Completed 422 Unprocessable Entity in 20ms (Views: 3.9ms | ActiveRecord: 5.4ms | Allocations: 4986)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:19:31 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"abcd", "password"=>"[FILTERED]", "fullname"=>"abcd", "email"=>"abcd@gmail.com", "user"=>{"username"=>"abcd", "fullname"=>"abcd", "email"=>"abcd@gmail.com"}}
+Completed 400 Bad Request in 3ms (ActiveRecord: 4.7ms | Allocations: 155)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user_id
+Did you mean?  user
+               username
+               password
+               email):
+  
+app/controllers/users_controller.rb:27:in `user_params'
+app/controllers/users_controller.rb:15:in `create'
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:19:47 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"abcd", "password"=>"[FILTERED]", "fullname"=>"abcd", "email"=>"abcd@gmail.com", "user"=>{"username"=>"abcd", "fullname"=>"abcd", "email"=>"abcd@gmail.com"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 1.5ms | Allocations: 146)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: id
+Did you mean?  user
+               action
+               controller
+               email):
+  
+app/controllers/users_controller.rb:27:in `user_params'
+app/controllers/users_controller.rb:15:in `create'
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:20:13 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"abcd", "password"=>"[FILTERED]", "fullname"=>"abcd", "email"=>"abcd@gmail.com", "user"=>{"username"=>"abcd", "fullname"=>"abcd", "email"=>"abcd@gmail.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abcd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abcd@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abcd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abcd@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.71ms)
+Completed 422 Unprocessable Entity in 17ms (Views: 2.7ms | ActiveRecord: 4.6ms | Allocations: 7800)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:20:23 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"abcd", "password"=>"[FILTERED]", "fullname"=>"abcd", "email"=>"abcd@gmail.com", "user"=>{"username"=>"abcd", "fullname"=>"abcd", "email"=>"abcd@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abcd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abcd@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "abcd"], ["fullname", "abcd"], ["password_digest", "$2a$12$W.Kyuc2YmgggAeRQrIBvburfPFSX6i5zXvpQBix/X.be5.ddaMEq2"], ["email", "abcd@gmail.com"], ["created_at", "2022-07-20 20:20:23.585906"], ["updated_at", "2022-07-20 20:20:23.585906"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "abcd"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "abcd@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.15ms)
+Completed 200 OK in 279ms (Views: 1.7ms | ActiveRecord: 6.3ms | Allocations: 8306)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 16:24:52 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 221)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:25:47 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 401 Unauthorized in 55ms (Views: 1.2ms | ActiveRecord: 22.3ms | Allocations: 4258)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:25:47 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 11ms (Views: 1.6ms | ActiveRecord: 3.3ms | Allocations: 1407)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:26:10 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"aaaa", "password"=>"[FILTERED]", "fullname"=>"aaaa", "email"=>"aaaa@gmail.com", "user"=>{"username"=>"aaaa", "fullname"=>"aaaa", "email"=>"aaaa@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aaaa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aaaa@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "aaaa"], ["fullname", "aaaa"], ["password_digest", "$2a$12$1qdhP7fRMWFpQQaY0QKMguaKpl1oSj6820QgNw4X3WQFpGKCWejB."], ["email", "aaaa@gmail.com"], ["created_at", "2022-07-20 20:26:10.357594"], ["updated_at", "2022-07-20 20:26:10.357594"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "aaaa"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "aaaa@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 200 OK in 288ms (Views: 0.9ms | ActiveRecord: 2.8ms | Allocations: 5345)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:43:19 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.49ms)
+Completed 200 OK in 98ms (Views: 1.0ms | ActiveRecord: 63.8ms | Allocations: 3686)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:43:19 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.21ms)
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 898)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 16:43:20 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:43:31 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"2222", "password"=>"[FILTERED]", "fullname"=>"2222", "email"=>"2222@gmail.com", "user"=>{"username"=>"2222", "fullname"=>"2222", "email"=>"2222@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "2222"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "2222@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "2222"], ["fullname", "2222"], ["password_digest", "$2a$12$kONqX72Fy3vtOHsDL80zSuMPjWwvNaVl.Ny1j4Fm.4d6a8f.7wclu"], ["email", "2222@gmail.com"], ["created_at", "2022-07-20 20:43:31.899795"], ["updated_at", "2022-07-20 20:43:31.899795"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "2222"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "2222@gmail.com"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 296ms (Views: 0.6ms | ActiveRecord: 3.0ms | Allocations: 5338)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "word_tags" DISABLE TRIGGER ALL;ALTER TABLE "userwords" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (18.3ms)[0m  [1m[35mTRUNCATE TABLE "users", "words", "word_tags", "userwords", "tags"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "word_tags" ENABLE TRIGGER ALL;ALTER TABLE "userwords" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "who@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 607], ["username", "yixin"], ["fullname", "Yixin"], ["password_digest", "$2a$12$o6svdhGz0Tnts/cL2fvV9OK28hpvmrvysoeENy09ghDRIEA1Uid0K"], ["email", "who@gmail.com"], ["created_at", "2022-07-20 20:44:27.095170"], ["updated_at", "2022-07-20 20:44:27.095170"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sam"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam19931225@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 510], ["username", "sam"], ["fullname", "Brad Pitt"], ["password_digest", "$2a$12$uxjWuDRxx8zWMK1bNfKp.OYVdie58g5KAq5YkzZM.dK7a/bbKc7HC"], ["email", "sam19931225@gmail.com"], ["created_at", "2022-07-20 20:44:27.340520"], ["updated_at", "2022-07-20 20:44:27.340520"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 848], ["username", "demo"], ["fullname", "Whoever"], ["password_digest", "$2a$12$Q/A56aMbFGxqwtze0wnrCO26R1eCmCwFMYtTxu7qd7bl1KlkH/Lem"], ["email", "demo@gmail.com"], ["created_at", "2022-07-20 20:44:27.586318"], ["updated_at", "2022-07-20 20:44:27.586318"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 16:44:32 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 217)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:44:44 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"12345", "password"=>"[FILTERED]", "fullname"=>"12345", "email"=>"12345@gmail.com", "user"=>{"username"=>"12345", "fullname"=>"12345", "email"=>"12345@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "12345@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "12345"], ["fullname", "12345"], ["password_digest", "$2a$12$wfE/xh8atjV/htI.PBaZB.A7xIQYU6jhXD6gyFwD5OMTQj/.PBJhK"], ["email", "12345@gmail.com"], ["created_at", "2022-07-20 20:44:44.755294"], ["updated_at", "2022-07-20 20:44:44.755294"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "12345"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "12345@gmail.com"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.09ms)
+Completed 200 OK in 288ms (Views: 0.6ms | ActiveRecord: 2.0ms | Allocations: 5321)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-20 16:47:57 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 228)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:48:06 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"2222", "password"=>"[FILTERED]", "fullname"=>"2222", "email"=>"2222@gmail.com", "user"=>{"username"=>"2222", "fullname"=>"2222", "email"=>"2222@gmail.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "2222"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "2222@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "2222"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "2222@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.93ms)
+Completed 422 Unprocessable Entity in 21ms (Views: 3.3ms | ActiveRecord: 12.5ms | Allocations: 7771)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "words" DISABLE TRIGGER ALL;ALTER TABLE "word_tags" DISABLE TRIGGER ALL;ALTER TABLE "userwords" DISABLE TRIGGER ALL;ALTER TABLE "tags" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (15.1ms)[0m  [1m[35mTRUNCATE TABLE "users", "words", "word_tags", "userwords", "tags"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "words" ENABLE TRIGGER ALL;ALTER TABLE "word_tags" ENABLE TRIGGER ALL;ALTER TABLE "userwords" ENABLE TRIGGER ALL;ALTER TABLE "tags" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "yixin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "who@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 602], ["username", "yixin"], ["fullname", "Yixin"], ["password_digest", "$2a$12$8B/z68PXhJhftWvr3nNKS.0yK5tallUBmMHkpHApg/xG0VsDw0FRC"], ["email", "who@gmail.com"], ["created_at", "2022-07-20 20:49:40.240916"], ["updated_at", "2022-07-20 20:49:40.240916"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sam"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam19931225@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 379], ["username", "sam"], ["fullname", "Brad Pitt"], ["password_digest", "$2a$12$RBFiwNRjYvM0gEEij4shwud9cZ9MmNPckqwUJIJ8iKPFPb4KHKMYW"], ["email", "sam19931225@gmail.com"], ["created_at", "2022-07-20 20:49:40.485302"], ["updated_at", "2022-07-20 20:49:40.485302"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["id", 209], ["username", "demo"], ["fullname", "Whoever"], ["password_digest", "$2a$12$T.qfDzErSoLz8bri6Gutp.dyNRZwH20RmfQnCLlhRC6Wi3pDHl7GS"], ["email", "demo@gmail.com"], ["created_at", "2022-07-20 20:49:40.730042"], ["updated_at", "2022-07-20 20:49:40.730042"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:49:43 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 11ms (Views: 1.5ms | ActiveRecord: 1.5ms | Allocations: 6737)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-20 16:49:43 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1422)
+
+
+Started POST "/signup" for 127.0.0.1 at 2022-07-20 16:49:53 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"1234", "password"=>"[FILTERED]", "fullname"=>"1234", "email"=>"12345@gmail.com"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "1234"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "12345@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "fullname", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "1234"], ["fullname", "1234"], ["password_digest", "$2a$12$p492Y7ZLXdgi189kimbofOv1RzEzWNfLB.PEB98UECWyh/2BIEdj."], ["email", "12345@gmail.com"], ["created_at", "2022-07-20 20:49:53.346236"], ["updated_at", "2022-07-20 20:49:53.346236"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "1234"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "12345@gmail.com"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.09ms)
+Completed 200 OK in 304ms (Views: 1.0ms | ActiveRecord: 5.7ms | Allocations: 9199)
+
+
