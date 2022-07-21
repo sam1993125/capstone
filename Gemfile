@@ -32,3 +32,6 @@ gem "faker", "~> 2.21"
 gem "awesome_print", "~> 1.9"
 
 gem "active_model_serializers", "~> 0.10.13"
+
+
+gem "rest-client", "= 2.0.1"

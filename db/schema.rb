@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 2022_07_20_195633) do
   create_table "userwords", force: :cascade do |t|
     t.integer "user_id"
     t.integer "word_id"
-    t.string "word"
+    t.string "name"
     t.text "definition"
     t.text "example"
-    t.string "written_by"
+    t.string "author"
     t.date "written_on"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 2022_07_20_195633) do
   end
 
   create_table "words", force: :cascade do |t|
-    t.string "word"
+    t.string "name"
     t.text "definition"
     t.text "example"
-    t.string "written_by"
+    t.string "author"
     t.date "written_on"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
