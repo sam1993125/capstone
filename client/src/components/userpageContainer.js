@@ -1,10 +1,24 @@
-import React from 'react'
-import WordList from "./userpage/WordCard"
+import { useState, useEffect } from 'react'
+import WordList from "./userpage/WordList"
 
-function userpageContainer({ setCurrentUser, currentUser }) {
+function UserpageContainer({ setCurrentUser, currentUser }) {
+
+  const [words, setWords] = useState([])
+
+    useEffect(() => {
+      fetch(`/userwords`)
+        .then((r) => r.json())
+        .then(data => setWords(data))
+      console.log("I am being called")
+    }, [])
+    
+    console.log(words)
+
   return (
-    <div><WordList setCurrentUser={setCurrentUser} currentUser={currentUser} /></div>
+    <div>
+      <WordList words={words} setCurrentUser={setCurrentUser} currentUser={currentUser} />
+      </div>
   )
 }
 
-export default userpageContainer
+export default UserpageContainer

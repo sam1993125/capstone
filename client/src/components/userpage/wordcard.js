@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-function WordCard({ word, setCurrentUser, currentUser }) {
+function WordCard({ aword, setCurrentUser, currentUser }) {
 //   const [like, setLike] = useState(true)
-    // const { name, definition, example, author, written_on } = word
+    const { name, definition, example, author, written_on } = aword
 
 //   function handleToggleClick (){
 
@@ -10,14 +10,13 @@ function WordCard({ word, setCurrentUser, currentUser }) {
 
   return (
     <li>
-      hi
-     {/* <div>
+     <div>
         <h4>{name}</h4>
         <p>{definition}</p>
         <p>{example}</p>
         <p>{author}</p>
         <p>{written_on}</p>
-    </div> */}
+    </div>
     </li>
   )
 }

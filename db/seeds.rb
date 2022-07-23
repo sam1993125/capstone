@@ -15,7 +15,7 @@ response = RestClient.get('https://api.urbandictionary.com/v0/random', headers:{
 json = JSON.parse(response)
 
 if !json.nil?
-  json["list"].map do |word|
+   json["list"].map  do |word|
         Word.create(
             # id: word.keys(),
              name: word["word"], 

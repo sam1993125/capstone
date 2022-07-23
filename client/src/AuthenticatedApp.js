@@ -2,38 +2,11 @@ import './App.css';
 import { useState, useEffect } from 'react'
 import NavBar from './components/NavBar'
 import UserpageContainer from './components/UserpageContainer'
+import DatabaseContainer from './components/DatabaseContainer'
 import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
     const history = useHistory()
-    // const [search, setSearch] = useState("Play Play")
-
-
-    useEffect (() => {
-        fetch(`https://api.urbandictionary.com/v0/define?term=words`)
-            .then((r) => r.json())
-            // .catch(function (err) {
-            //     console.info(err + " url: " + "http://api.urbandictionary.com/v0/define?term=words");
-            // })
-            .then(data => console.log(data))
-
-}, [])
-
-    // useEffect(() => {
-    //     fetch(`https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${search}`, {
-    //         method: 'GET',
-    //         headers: {
-    //             'X-RapidAPI-Key': '35f5a32d92msha9883f0f1285bc9p1d3862jsnd68ea51520fe',
-    //             'X-RapidAPI-Host': 'mashape-community-urban-dictionary.p.rapidapi.com'
-    //         }
-    //     })
-    //         .then((r) => r.json())
-    //         .catch(function (err) {
-    //             console.info(err + " url: " + `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${search}`);
-    //         })
-    //         .then(data => console.log(data))
-
-    // }, [])
 
 
     // useEffect(() => {
@@ -59,13 +32,21 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
         <div>
             <NavBar handleLogout={handleLogout} setCurrentUser={setCurrentUser} currentUser={currentUser} />
                 <Switch>
+
                 <Route exact path="/">
                     <div>
                         <UserpageContainer setCurrentUser={setCurrentUser} currentUser={currentUser} />
-                        <hi>Hello</hi>
+                        <h1>Hello</h1>
                     </div>
                 </Route>
-            {/* <Redirect to="/" /> */}
+
+                <Route exact path="/database">
+                    <div>
+                        <DatabaseContainer setCurrentUser={setCurrentUser} currentUser={currentUser} />
+                        <h1>Hello</h1>
+                    </div>
+                </Route>
+            <Redirect to="/" />
         </Switch>
         </div>
 
