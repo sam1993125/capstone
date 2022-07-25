@@ -1,4 +1,4 @@
-require 'faker'
+    require 'faker'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -31,8 +31,8 @@ if !json.nil?
 end
 
 puts "🤪 Making userwords..."
-Userword.create(id: 1, user_id:User.first.id, word_id:Word.first.id, name:Word.first[:name], definition: Word.first[:definition], example: Word.first[:example], author: Word.first[:author], written_on: Word.first[:written_on])
-Userword.create(id: 2, user_id:User.first.id, word_id:Word.second.id, name:Word.second[:name], definition: Word.second[:definition], example: Word.second[:example], author: Word.second[:author], written_on: Word.second[:written_on])
-Userword.create(id: 3, user_id:User.first.id, word_id:Word.third.id, name:Word.third[:name], definition: Word.third[:definition], example: Word.third[:example], author: Word.third[:author], written_on: Word.third[:written_on])
+Userword.create(user_id:User.first.id, word_id:Word.first.id)
+Userword.create(user_id:User.first.id, word_id:Word.second.id)
+Userword.create(user_id:User.first.id, word_id:Word.third.id)
 
 

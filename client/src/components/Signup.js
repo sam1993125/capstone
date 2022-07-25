@@ -1,6 +1,8 @@
 // client/src/components/Signup.js
 import React, { useState } from 'react'
 import { useHistory, Link } from 'react-router-dom'
+import styled from '@emotion/styled'
+
 
 function Signup({ setCurrentUser }) {
     const history = useHistory()
@@ -38,10 +40,9 @@ function Signup({ setCurrentUser }) {
     }
     return (
         <div>
-            <p>-- put toggle on top --</p>
-            <p><Link to="/login">Log In</Link></p>
+          
             <form onSubmit={handleSubmit}>
-                <h1>Sign Up</h1>
+                {/* <h1>Sign Up</h1> */}
                 <p>
                     <label
                         htmlFor="username"
@@ -96,23 +97,23 @@ function Signup({ setCurrentUser }) {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </p>
-                <p>
-                    {/* <label
-                        htmlFor="password_confirmation"
-                    >
-                        Password Confirmation
-                    </label>
-                    <input
-                        type="password"
-                        name="password_confirmation"
-                        value={passwordConfirmation}
-                        onChange={(e) => setPasswordConfirmation(e.target.value)}
-                    /> */}
-                </p>
-                <p><button type="submit">Sign Up</button></p>
+                <p><Link to="/login">You have account? Then why u here?</Link></p>
+                <Button type="submit">Sign Up</Button>
             </form>
         </div>
     )
 }
+
+const Button = styled.button`
+ padding: 20px;
+  background-color: #f5ffe3;
+  font-size: 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin: 10px;
+  align: cetner
+  &:hover {
+    color: white;
+`
 
 export default Signup

@@ -1,12 +1,12 @@
 import React from 'react'
-import WordCard from "./WordCard"
+import WordCard from "./wordcard"
 
 function WordList({ words, handleClick }) {
 
     const userwords = words.map((word) => (
         <WordCard 
             key={word.id}
-            aword={word}
+            aword={word.word}
             // handleClick={handleClick}
         />
     ))

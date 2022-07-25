@@ -7,10 +7,12 @@ Rails.application.routes.draw do
 
   #Words
   get "/words", to: "words#index"
+  get "/words/:id", to: "words#show"
+  post "/add_word", to: "words#create"
 
   #Userwords
   get "/userwords", to: "userwords#index"
-  # get "/userwords/:id", to: "userwords#show"
+  delete "/userwords/:id", to: "userwords#destroy"
 
   # Routing logic: fallback requests for React Router.
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }

@@ -1,5 +1,5 @@
 import React from 'react'
-import WordCard from "./WordCard"
+import WordCard from "./wordcard"
 
 function WordList({ words, handleClick }) {
     

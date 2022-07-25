@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 
 function SearchBar({ searchTerm, onSearchChange }) {
 
@@ -6,6 +6,18 @@ function SearchBar({ searchTerm, onSearchChange }) {
         e.preventDefault();
         onSearchChange(searchTerm)
     }
+
+    useEffect(() => {
+        const delayDebounceFn = setTimeout(() => {
+            console.log(searchTerm)
+            onSearchChange(searchTerm)
+            onSearchChange("")
+            // Send Axios request here
+        }, 1500)
+
+        return () => clearTimeout(delayDebounceFn)
+    }, [searchTerm])
+
 
   return (
    

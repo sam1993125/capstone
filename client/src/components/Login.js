@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Redirect, useHistory, Link } from 'react-router-dom'
+import styled from '@emotion/styled'
+
 
 function Login({ setCurrentUser }) {
     const history = useHistory()
@@ -30,11 +32,10 @@ function Login({ setCurrentUser }) {
     }
     return (
         <div>
-            <p>--put toggle on top --</p>
-            <p><Link to="/signup">Sign Up</Link></p>
+         
             <Redirect to="/" />
             <form onSubmit={handleSubmit}>
-                <h1>Log In</h1>
+                {/* <h1>Log In</h1> */}
                 <p>
                     <label htmlFor="username">
                         Username
@@ -59,10 +60,24 @@ function Login({ setCurrentUser }) {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </p>
-                <p><button type="submit">Log In</button></p>
+                <p><Link to="/signup">No account here? OMG!</Link></p>
+                <Button type="submit">Log In</Button>
             </form>
         </div>
     )
 }
+
+
+const Button = styled.button`
+    padding: 20px;
+    background-color: #f5ffe3;
+    font-size: 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 10px;
+    align: cetner
+    &:hover {
+    color: white;
+`
 
 export default Login

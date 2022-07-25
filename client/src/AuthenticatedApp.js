@@ -1,8 +1,10 @@
 import './App.css';
-import { useState, useEffect } from 'react'
+import React from 'react';
 import NavBar from './components/NavBar'
 import UserpageContainer from './components/UserpageContainer'
 import DatabaseContainer from './components/DatabaseContainer'
+import Form from './components/Form'
+
 import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
@@ -36,21 +38,29 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
                 <Route exact path="/">
                     <div>
                         <UserpageContainer setCurrentUser={setCurrentUser} currentUser={currentUser} />
-                        <h1>Hello</h1>
                     </div>
                 </Route>
 
                 <Route exact path="/database">
                     <div>
                         <DatabaseContainer setCurrentUser={setCurrentUser} currentUser={currentUser} />
-                        <h1>Hello</h1>
                     </div>
                 </Route>
-            <Redirect to="/" />
-        </Switch>
+
+                <Route exact path="/submit">
+                    <div>
+                        <Form setCurrentUser={setCurrentUser} currentUser={currentUser} />
+                    </div>
+                </Route>
+
+                    <Redirect to="/" />
+                </Switch>
+
+         
         </div>
 
     );
-}
+}       
+
 
 export default AuthenticatedApp;
