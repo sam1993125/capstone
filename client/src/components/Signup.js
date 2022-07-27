@@ -10,7 +10,7 @@ function Signup({ setCurrentUser }) {
     const [fullname, setFullname] = useState('')
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
-    
+
     const handleSubmit = (event) => {
         event.preventDefault()
         fetch('/signup', {
@@ -40,28 +40,35 @@ function Signup({ setCurrentUser }) {
     }
     return (
         <div>
-          
+
             <form onSubmit={handleSubmit}>
                 {/* <h1>Sign Up</h1> */}
                 <p>
                     <label
                         htmlFor="username"
+                        style={style}
                     >
                         Username
                     </label>
+                    &nbsp;
+                    &nbsp;
                     <input
                         type="text"
                         name="username"
                         value={username}
+                        style={{ borderRadius: "4px" }}
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </p>
                 <p>
                     <label
                         htmlFor="fullname"
+                        style={style}
                     >
                         Full Name
                     </label>
+                    &nbsp;
+                    &nbsp;
                     <input
                         type="text"
                         name="fullname"
@@ -73,9 +80,12 @@ function Signup({ setCurrentUser }) {
                 <p>
                     <label
                         htmlFor="password"
+                        style={style}
                     >
                         Password
                     </label>
+                    &nbsp;
+                    &nbsp;
                     <input
                         type="password"
                         name=""
@@ -83,13 +93,16 @@ function Signup({ setCurrentUser }) {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </p>
-                
+
                 <p>
                     <label
                         htmlFor="email"
+                        style={style}
                     >
                         Email
                     </label>
+                    &nbsp;
+                    &nbsp;
                     <input
                         type="email"
                         name="email"
@@ -97,7 +110,7 @@ function Signup({ setCurrentUser }) {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </p>
-                <p><Link to="/login">You have account? Then why u here?</Link></p>
+                <p><Link to="/login" style={style}>You have account? Then why u here?</Link></p>
                 <Button type="submit">Sign Up</Button>
             </form>
         </div>
@@ -115,5 +128,11 @@ const Button = styled.button`
   &:hover {
     color: white;
 `
+const style = {
+    textAlign: 'left',
+    fontFamily: 'Arial',
+    fontWeight: "bold",
+    textDecoration: "none"
+}
 
 export default Signup

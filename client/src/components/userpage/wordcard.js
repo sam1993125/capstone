@@ -1,14 +1,10 @@
 import React from 'react'
 import { css } from '@emotion/react';
 
-function WordCard({ aword, setCurrentUser, currentUser }) {
-  console.log(aword)
-//   const [like, setLike] = useState(true)
-    //const { word, definition, example, author, written_on } = aword
+function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete }) {
+  //   const [like, setLike] = useState(true)
+  const { name, definition, example, author, written_on } = aword
 
-//   function handleToggleClick (){
-
-// }
 
   return (
 
@@ -16,24 +12,25 @@ function WordCard({ aword, setCurrentUser, currentUser }) {
       textAlign: 'left',
       fontFamily: 'Arial',
       backgroundColor: "#f5ffe3",
-      fontSize: "24px",
+      fontSize: "20px",
       border: '1px solid gray',
       borderRadius: '5px',
-      marginRight:"30px",
+      marginRight: "40px",
       marginBottom: "30px",
-        border: "1px solid",
-        padding: "5px",
-        boxShadow: " 3px 3px"
-      
-      }}>
+      border: "1px solid",
+      padding: "5px",
+      boxShadow: " 3px 3px"
+
+    }}>
       <ul>
-            {/* <h4>{word}</h4>
-            <p>{definition}</p>
-            <p>{example}</p>
-            <p>{author}</p>
-            <p>{written_on}</p> */}
+        <h4>{name}</h4>
+        <button onClick={() => handleDelete(id)}>delete</button>
+        <p>{definition}</p>
+        <p>{example}</p>
+        <p>{author}</p>
+        <p>{written_on}</p>
       </ul>
-      </div>
+    </div>
   )
 }
 

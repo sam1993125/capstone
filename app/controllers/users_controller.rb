@@ -21,9 +21,23 @@ skip_before_action :authenticate_user
     end
   end
 
+  def words_create
+    word = Word.create!(word_param)
+    userword = Userword.create!(user_id: current_user.id, word_id: word.id)
+  end
+
+  def user_words_index
+    # byebug
+    render json: current_user.words.order("created_at DESC")
+  end
+
   private
 
   def user_params
     params.permit(:username, :password, :fullname, :email)
+  end
+
+   def word_param
+        params.permit(:name, :definition, :example, :written_on, :author)
   end
 end

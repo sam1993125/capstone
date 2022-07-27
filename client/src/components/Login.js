@@ -32,14 +32,17 @@ function Login({ setCurrentUser }) {
     }
     return (
         <div>
-         
+
             <Redirect to="/" />
             <form onSubmit={handleSubmit}>
                 {/* <h1>Log In</h1> */}
                 <p>
-                    <label htmlFor="username">
+                    <label htmlFor="username"
+                        style={style}>
                         Username
                     </label>
+                    &nbsp;
+                    &nbsp;
                     <input
                         type="text"
                         name="username"
@@ -50,9 +53,12 @@ function Login({ setCurrentUser }) {
                 <p>
                     <label
                         htmlFor="password"
+                        style={style}
                     >
                         Password
                     </label>
+                    &nbsp;
+                    &nbsp;
                     <input
                         type="password"
                         name=""
@@ -60,7 +66,7 @@ function Login({ setCurrentUser }) {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </p>
-                <p><Link to="/signup">No account here? OMG!</Link></p>
+                <p><Link to="/signup" style={style}>No account here? OMG!</Link></p>
                 <Button type="submit">Log In</Button>
             </form>
         </div>
@@ -79,5 +85,11 @@ const Button = styled.button`
     &:hover {
     color: white;
 `
+const style = {
+    textAlign: 'left',
+    fontFamily: 'Arial',
+    fontWeight: "bold",
+    textDecoration: "none"
+}
 
 export default Login

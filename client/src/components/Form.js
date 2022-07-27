@@ -1,4 +1,4 @@
-import React, { useEffect , useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from "react-router";
 import styled from '@emotion/styled'
 
@@ -42,60 +42,60 @@ function Form() {
   return (
     <div>
       <div>
-      <p style={{
-      textAlign: 'left',
-      fontFamily: 'Arial',
-      fontSize: '50px',
-      fontWeight: "bold"
-    }}>Add Words</p>
-      <form onSubmit={handleSubmit}>
-        <p><Input
-          type="text"
-          name="word"
-          placeholder="Word"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        </p>
-        <p>
-        <Input
-          type="text"
-          name="definition"
-          placeholder="Definition"
-          value={definition}
-          onChange={(e) => setDefinition(e.target.value)}
-        />
-        </p>
-        <p>
-        <Input
-          type="text"
-          name="example"
-          placeholder="Example"
-          value={example}
-          onChange={(e) => setExample(e.target.value)}
-        />
-        </p>
-        <p>
-        <Input
-          type="text"
-          name="author"
-          placeholder="Author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-        />
-        </p>
-      <p>
-        <Input
-          type="date"
-          name="written_on"
-          placeholder="Written On"
-          value={writtenon}
-          onChange={(e) => setWrittenon(e.target.value)}
-        />
-        </p>
-        <Button type="submit">Add</Button>
-      </form>
-    </div>
+        <p style={{
+          textAlign: 'left',
+          fontFamily: 'Arial',
+          fontSize: '50px',
+          fontWeight: "bold"
+        }}>Add Words</p>
+        <form onSubmit={handleSubmit}>
+          <p><Input
+            type="text"
+            name="word"
+            placeholder="Word"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          </p>
+          <p>
+            <Input
+              type="text"
+              name="definition"
+              placeholder="Definition"
+              value={definition}
+              onChange={(e) => setDefinition(e.target.value)}
+            />
+          </p>
+          <p>
+            <Input
+              type="text"
+              name="example"
+              placeholder="Example"
+              value={example}
+              onChange={(e) => setExample(e.target.value)}
+            />
+          </p>
+          <p>
+            <Input
+              type="text"
+              name="author"
+              placeholder="Author"
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
+            />
+          </p>
+          <p>
+            <Input
+              type="date"
+              name="written_on"
+              placeholder="Written On"
+              value={writtenon}
+              onChange={(e) => setWrittenon(e.target.value)}
+            />
+          </p>
+          <Button type="submit">Add</Button>
+        </form>
+      </div>
     </div>
   )
 }

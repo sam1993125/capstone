@@ -1,13 +1,16 @@
 import React from 'react'
 import WordCard from "./wordcard"
 
-function WordList({ words, handleClick }) {
+function WordList({ id, words, handleDelete }) {
+
+    // console.log(words)
+    
 
     const userwords = words.map((word) => (
-        <WordCard 
-            key={word.id}
-            aword={word.word}
-            // handleClick={handleClick}
+        <WordCard
+            id={word.id}
+            aword={word}
+            handleDelete={handleDelete}
         />
     ))
 

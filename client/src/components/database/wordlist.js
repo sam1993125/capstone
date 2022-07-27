@@ -1,22 +1,21 @@
 import React from 'react'
 import WordCard from "./wordcard"
 
-function WordList({ words, handleClick }) {
-    
+function WordList({ words, currentUser }) {
 
     const userwords = words.map((word) => (
         <WordCard
-            key={word.id}
+            id={word.defid}
             aword={word}
-        // handleClick={handleClick}
+            currentUser={currentUser}
         />
     ))
-
+ 
     return (
-        <ul>
+        <div>
             {userwords}
-        </ul>
+        </div>
     )
 }
 
-export default WordList 
+export default WordList  

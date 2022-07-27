@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
+  #User
+  post "users/:user_id/words", to: "users#words_create"
+  get "users/:user_id/words", to: "users#user_words_index"
+
   #Words
   get "/words", to: "words#index"
   get "/words/:id", to: "words#show"
@@ -12,6 +16,7 @@ Rails.application.routes.draw do
 
   #Userwords
   get "/userwords", to: "userwords#index"
+  post "/userwords", to: "userwords#create"
   delete "/userwords/:id", to: "userwords#destroy"
 
   # Routing logic: fallback requests for React Router.

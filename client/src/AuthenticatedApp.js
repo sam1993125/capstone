@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar'
 import UserpageContainer from './components/UserpageContainer'
 import DatabaseContainer from './components/DatabaseContainer'
@@ -10,12 +10,19 @@ import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
     const history = useHistory()
 
+    const [search, setSearch] = useState("")
+    const [words, setWords] = useState([])
 
     // useEffect(() => {
-    //     fetch('/posts')
-    //         .then(res => res.json())
-    //         // .then(posts => setPosts(posts))
-    // }, [])
+    //     if (!search) return;
+    //     fetch(`https://api.urbandictionary.com/v0/define?term=${search}`)
+    //         .then((r) => r.json())
+    //         .then(data => {
+    //           console.log(data)
+    //         })
+    // }, [search])
+
+    // console.log(words)
 
     const handleLogout = () => {
         fetch('/logout', {
@@ -30,10 +37,11 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
             })
     }
 
+
     return (
         <div>
             <NavBar handleLogout={handleLogout} setCurrentUser={setCurrentUser} currentUser={currentUser} />
-                <Switch>
+            <Switch>
 
                 <Route exact path="/">
                     <div>
@@ -43,7 +51,9 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
                 <Route exact path="/database">
                     <div>
-                        <DatabaseContainer setCurrentUser={setCurrentUser} currentUser={currentUser} />
+                        <DatabaseContainer
+                            // handleClick={handleClick} 
+                            setCurrentUser={setCurrentUser} currentUser={currentUser} />
                     </div>
                 </Route>
 
@@ -53,10 +63,10 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
                     </div>
                 </Route>
 
-                    <Redirect to="/" />
-                </Switch>
+                <Redirect to="/" />
+            </Switch>
 
-         
+
         </div>
 
     );

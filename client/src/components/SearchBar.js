@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 
 function SearchBar({ searchTerm, onSearchChange }) {
 
@@ -7,20 +7,20 @@ function SearchBar({ searchTerm, onSearchChange }) {
         onSearchChange(searchTerm)
     }
 
-    useEffect(() => {
-        const delayDebounceFn = setTimeout(() => {
-            console.log(searchTerm)
-            onSearchChange(searchTerm)
-            onSearchChange("")
-            // Send Axios request here
-        }, 1500)
+    // useEffect(() => {
+    //     const delayDebounceFn = setTimeout(() => {
+    //         console.log(searchTerm)
+    //         onSearchChange(searchTerm)
+    //         onSearchChange("")
+    //         // Send Axios request here
+    //     }, 1500)
 
-        return () => clearTimeout(delayDebounceFn)
-    }, [searchTerm])
+    //     return () => clearTimeout(delayDebounceFn)
+    // }, [searchTerm])
 
 
-  return (
-   
+    return (
+
         <div className="searchbar" onSubmit={handleSubmit}>
             {/* <label htmlFor="search">Search </label> */}
             <input
