@@ -2,8 +2,9 @@ import React from 'react'
 import { css } from '@emotion/react';
 
 function WordCard({ aword, setCurrentUser, currentUser }) {
+  console.log(aword)
 //   const [like, setLike] = useState(true)
-    const { name, definition, example, author, written_on } = aword
+    //const { word, definition, example, author, written_on } = aword
 
 //   function handleToggleClick (){
 
@@ -26,11 +27,11 @@ function WordCard({ aword, setCurrentUser, currentUser }) {
       
       }}>
       <ul>
-            <h4>{name}</h4>
+            {/* <h4>{word}</h4>
             <p>{definition}</p>
             <p>{example}</p>
             <p>{author}</p>
-            <p>{written_on}</p>
+            <p>{written_on}</p> */}
       </ul>
       </div>
   )
