@@ -11,8 +11,9 @@ class UserwordsController < ApplicationController
     end
 
     def destroy
-        userword = Userword.find(params[:id])
-        userword.destroy
+        userword = Userword.where(user_id: params[:user_id])
+        delete_userword = userword.find_by(word_id: params[:word_id])
+        delete_userword.destroy
         head :no_content
     end
 

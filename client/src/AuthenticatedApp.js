@@ -59,7 +59,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
                 <Route exact path="/submit">
                     <div>
-                        <Form setCurrentUser={setCurrentUser} currentUser={currentUser} />
+                        <Form setCurrentUser={setCurrentUser} currentUser={currentUser} id={currentUser.id} />
                     </div>
                 </Route>
 

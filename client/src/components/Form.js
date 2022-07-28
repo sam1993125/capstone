@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from "react-router";
 import styled from '@emotion/styled'
 
-function Form() {
+function Form({ id, currentUser }) {
 
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -15,9 +15,17 @@ function Form() {
 
 
   function handleSubmit(e) {
+
+    console.log({
+      name: name,
+      definition: definition,
+      example: example,
+      author: author,
+      written_on: writtenon,
+    })
     e.preventDefault();
     setIsLoading(true);
-    fetch(`/add_word`, {
+    fetch( `/users/${currentUser.id}/words`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,10 +48,27 @@ function Form() {
   }
 
   return (
-    <div>
-      <div>
+    <div style = {{
+        marginRight: "20px",
+        marginLeft: "20px",
+        marginBottom: "50px"}}>
+      <div style = {{
+        textAlign: 'center',
+        fontFamily: 'Arial',
+        backgroundColor: "#f5ffe3",
+        fontSize: "24px",
+        border: '1px solid gray',
+        borderRadius: '5px',
+        marginRight: "28px",
+        marginLeft: "28px",
+        marginBottom: "30px",
+        // border: "1px solid",
+        padding: "5px",
+        boxShadow: "3px 3px"
+
+      }}>
         <p style={{
-          textAlign: 'left',
+          textAlign: 'center',
           fontFamily: 'Arial',
           fontSize: '50px',
           fontWeight: "bold"

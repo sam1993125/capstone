@@ -9,22 +9,26 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
     fetch(`/users/${currentUser.id}/words`)
       .then((r) => r.json())
       .then(data => 
-      setWords(data))
-      
+      setWords(data)) 
     // console.log("I am being called")
   }, [])
 
   console.log("I am being called", words)
 
-  // console.log(words)
   
   function handleDelete(id) {
     console.log(id)
-    fetch(`/userwords/${id}`, { method: "DELETE" })
-    
+    fetch(`/userwords/${id}`, { 
+      method: "DELETE",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        user_id: currentUser.id,
+        word_id: id
+      })
+    })
       .then(r => {
         if (r.ok) {
-          setWords(words => words.filter(word => word.id != id))
+          setWords(words => words.filter(word => word.id !== id))
         }
       })
   }

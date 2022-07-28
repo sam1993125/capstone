@@ -27,7 +27,6 @@ skip_before_action :authenticate_user
   end
 
   def user_words_index
-    # byebug
     render json: current_user.words.order("created_at DESC")
   end
 

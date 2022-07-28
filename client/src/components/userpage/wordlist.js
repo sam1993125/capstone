@@ -4,7 +4,6 @@ import WordCard from "./wordcard"
 function WordList({ id, words, handleDelete }) {
 
     // console.log(words)
-    
 
     const userwords = words.map((word) => (
         <WordCard
@@ -17,7 +16,6 @@ function WordList({ id, words, handleDelete }) {
     return (
         <ul>
             {userwords}
-            {/* <WordCard /> */}
         </ul>
     )
 }

@@ -32,8 +32,8 @@ function UnauthenticatedApp({ setCurrentUser }) {
         <Redirect to="/" />
       </Switch>
       <Rotate>😹</Rotate>
-      <Rotate>😹</Rotate>
-      <Rotate>😹</Rotate>
+      <Rotate>🍵</Rotate>
+      <Rotate>🫣</Rotate>
     </div>
   )
 }
@@ -43,7 +43,6 @@ const rotate = keyframes`
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }

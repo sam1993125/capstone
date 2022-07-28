@@ -9,6 +9,8 @@ function WordCard({id, aword, setCurrentUser, currentUser }) {
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory()
 
+    // console.log(typeof written_on)
+
 
   function handleClick() {
       console.log({
@@ -34,13 +36,13 @@ function WordCard({id, aword, setCurrentUser, currentUser }) {
       .then((r) => {
         setIsLoading(false);
         if (r.ok) {
-          r.json()
-            .then(data => setSingleword(data))   
+            //r.json()
+            //   console.log(r.json());
+            // .then(data => setSingleword(data))   
             // (pessimistic rendering)
-            // setSingleword(aword)
+            setSingleword(aword)
             // (optimistic rendering)
-        //   console.log(r.json());
-          history.push("/");
+              history.push("/");
         } else {
           r.json()
             .then((err) => setErrors(err.errors));
@@ -65,11 +67,11 @@ function WordCard({id, aword, setCurrentUser, currentUser }) {
 
             }}>
                 <h4>{word}</h4>
-                <button onClick={handleClick}>➕</button>
-                <p>{definition}</p>
-                <p>{example}</p>
+                <button onClick={() => handleClick()}>➕</button>
+                <p>{definition.replace(/\[|\]|"/g, "")}</p>
+                <p>{example.replace(/\[|\]|"/g, "")}</p>
                 <p>{author}</p>
-                <p>{written_on}</p>
+                <p>{written_on.slice(0, written_on.indexOf('T'))}</p>
             </div>
         </ul>
     )
