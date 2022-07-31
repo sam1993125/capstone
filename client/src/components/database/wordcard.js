@@ -11,7 +11,6 @@ function WordCard({id, aword, setCurrentUser, currentUser }) {
 
     // console.log(typeof written_on)
 
-
   function handleClick() {
       console.log({
           name: aword.word,
@@ -36,7 +35,7 @@ function WordCard({id, aword, setCurrentUser, currentUser }) {
       .then((r) => {
         setIsLoading(false);
         if (r.ok) {
-            //r.json()
+            //sr.json()
             //   console.log(r.json());
             // .then(data => setSingleword(data))   
             // (pessimistic rendering)
@@ -52,20 +51,7 @@ function WordCard({id, aword, setCurrentUser, currentUser }) {
 
     return (
         <ul>
-            <div style={{
-                textAlign: 'left',
-                fontFamily: 'Arial',
-                backgroundColor: "#f5ffe3",
-                fontSize: "24px",
-                border: '1px solid gray',
-                borderRadius: '5px',
-                marginRight: "30px",
-                marginBottom: "30px",
-                // border: "1px solid",
-                padding: "5px",
-                boxShadow: "3px 3px"
-
-            }}>
+            <div className="box">
                 <h4>{word}</h4>
                 <button onClick={() => handleClick()}>➕</button>
                 <p>{definition.replace(/\[|\]|"/g, "")}</p>

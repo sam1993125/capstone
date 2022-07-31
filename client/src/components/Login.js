@@ -84,6 +84,7 @@ const Button = styled.button`
     align: cetner
     &:hover {
     color: white;
+    }
 `
 const style = {
     textAlign: 'left',

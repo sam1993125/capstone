@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 import WordList from "./userpage/wordlist"
+/** @jsxImportSource @emotion/react */
+// import { css } from '@emotion/react';
+import styled from '@emotion/styled'
 
 function UserpageContainer({ setCurrentUser, currentUser }) {
 
@@ -9,11 +12,14 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
     fetch(`/users/${currentUser.id}/words`)
       .then((r) => r.json())
       .then(data => 
-      setWords(data)) 
+        setWords(data)
+      // console.log(data)
+      ) 
+    
     // console.log("I am being called")
   }, [])
 
-  console.log("I am being called", words)
+  // console.log("I am being called", words)
 
   
   function handleDelete(id) {
@@ -37,8 +43,6 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
     <div>
       <WordList words={words} setCurrentUser={setCurrentUser} currentUser={currentUser} handleDelete={handleDelete} />
     </div>
-
-
   )
 }
 

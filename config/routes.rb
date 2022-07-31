@@ -15,9 +15,16 @@ Rails.application.routes.draw do
 
   #Userwords
   get "/userwords", to: "userwords#index"
+  get "/userwords/:userword_id/tags", to:"userwords#userword_tags_index"
   post "/userwords", to: "userwords#create"
   delete "/userwords/:id", to: "userwords#destroy"
 
+  #Tag
+  get "/tags", to: "tags#index"
+  
+  #WordTag
+  get "/wordtags", to: "word_tags#index"
+  
   # Routing logic: fallback requests for React Router.
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

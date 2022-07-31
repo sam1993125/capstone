@@ -13,15 +13,6 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
     const [search, setSearch] = useState("")
     const [words, setWords] = useState([])
 
-    // useEffect(() => {
-    //     if (!search) return;
-    //     fetch(`https://api.urbandictionary.com/v0/define?term=${search}`)
-    //         .then((r) => r.json())
-    //         .then(data => {
-    //           console.log(data)
-    //         })
-    // }, [search])
-
     // console.log(words)
 
     const handleLogout = () => {
@@ -37,9 +28,18 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
             })
     }
 
-
     return (
         <div>
+            <div>
+                <h3 style={{
+                    textAlign: 'center',
+                    fontFamily: 'Shrikhand',
+                    fontSize: '50px',
+                    color: "#018A9F", 
+                    fontWeight: "bold",
+                    textShadow: " 5px 5px rgba(22, 33, 33, 0.2)"
+                }}>My Urban Dictionary</h3>
+            </div>
             <NavBar handleLogout={handleLogout} setCurrentUser={setCurrentUser} currentUser={currentUser} />
             <Switch>
 
@@ -51,9 +51,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
                 <Route exact path="/database">
                     <div>
-                        <DatabaseContainer
-                            // handleClick={handleClick} 
-                            setCurrentUser={setCurrentUser} currentUser={currentUser} />
+                        <DatabaseContainer setCurrentUser={setCurrentUser} currentUser={currentUser} />
                     </div>
                 </Route>
 
@@ -65,8 +63,6 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
                 <Redirect to="/" />
             </Switch>
-
-
         </div>
 
     );

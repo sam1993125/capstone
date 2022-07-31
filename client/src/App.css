@@ -39,7 +39,7 @@
 
 
 .nav {
-  box-sizing: border - box;
+  box-sizing: border-box;
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 0px;
@@ -50,3 +50,46 @@
 
 }
 
+.box {
+  transition: box-shadow 0.5s;
+  width: 85%;
+  /* height: 500; */
+  text-align: left;
+  font-family: Arial;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  background: #f5ffe3;
+  padding: 5px;
+  border-width: 2px;
+  border-color:rgba(22, 33, 33, 1);
+  display: grid;
+}
+
+.box:hover {
+  box-shadow: 5px 5px rgba(22, 33, 33, 1);
+}
+
+
+.title{
+  font-family: Arial;
+  margin-bottom: 30px;
+  margin-left: 50px
+}
+
+.title h2{
+  margin: 10px;
+}
+
+.button{
+  text-decoration: none;
+  text-decoration-color: black;
+  padding: 20px;
+  background-color: #f5ffe3;
+  font-size: 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin: 15px;
+  box-shadow: 1px 1px rgba(0, 0, 0, 1);
+
+}

@@ -9,14 +9,14 @@ function NavBar({ handleLogout }) {
 
 
   return (
-    <div style={{ margin: "25px" }}>
-      <Button><NavLink to="/" style={({ "textDecoration": "none", "color": "black" })}>Home </NavLink></Button>
+    <div style={{ margin: "30px", display: "flex", justifyContent: "space-evenly"}}>
+      <Button><NavLink to="/" style={({ "textDecoration": "none", "color": "#018A9F" })}>Home </NavLink></Button>
 
-      <Button><NavLink to="/database" style={({ "text-decoration": "none", "color": "black", })}>Search Slangs</NavLink></Button>
+      <Button><NavLink to="/database" style={({ "text-decoration": "none", "color": "#018A9F", })}>Search Slangs</NavLink></Button>
 
-      <Button><NavLink to="/submit" style={({ "text-decoration": "none", "color": "black", })}>Submit Your Slangs</NavLink></Button>
+      <Button><NavLink to="/submit" style={({ "text-decoration": "none", "color": "#018A9F", })}>Submit Your Slangs</NavLink></Button>
 
-      <Button><NavLink to="/" onClick={handleLogout} style={({ "text-decoration": "none", "color": "black", })}>Logout</NavLink></Button>
+      <Button><NavLink to="/" onClick={handleLogout} style={({ "text-decoration": "none", "color": "#018A9F", })}>Logout</NavLink></Button>
 
     </div>
   )
@@ -25,14 +25,18 @@ function NavBar({ handleLogout }) {
 const Button = styled.button`
   padding: 20px;
   background-color: #f5ffe3;
+  font-family: 'Kavoon', cursive;
   font-size: 24px;
   border-radius: 4px;
   font-weight: bold;
-  margin: 15px;
+  margin: 1px;
+  cursor: pointer;
+  transition: box-shadow 0.5s;
   &:hover {
-    color: white;
+     box-shadow: 5px 5px rgba(22, 33, 33, 1);
   }
-    box-shadow: 1px 1px rgba(0, 0, 0, 1);
+}
+  
 `
 
 

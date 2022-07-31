@@ -1,13 +1,26 @@
-import {useState} from 'react'
-import { css } from '@emotion/react';
+import { useState, useEffect } from 'react'
+/** @jsxImportSource @emotion/react */
+// import { css } from '@emotion/react';
+import styled from '@emotion/styled'
 
 function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete }) {
   const { name, definition, example, author, written_on } = aword
 
-  const [tags, setTags] = useState([])
+  const [tags, setTags] = useState([]);
+  // const [isHover, setIshover] = useState(false);
+  
 
 
-  const addTag = (e) => {
+  // useEffect((id) => {
+  //   fetch(`/userwords/5/tags`)
+  //     .then((r) => r.json())
+  //     .then(data => setTags(data)) 
+  //       // console.log("I am being called", data)
+  // }, [])
+
+  // console.log(tags)
+
+  function addTag (e) {
       console.log(e.target.value, e.key)
       if (e.key === "Enter"){
         if (e.target.value.length > 0)
@@ -17,18 +30,24 @@ function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete }) {
   }
 
 
-  const removeTag = removedTag => {
+  function removeTag (removedTag) {
       const newTags = tags.filter(tag => tag !== removedTag)
       setTags(newTags)
   }
 
+
+  
+
+
   return (
 
-    <div style={style}>
+    <Box>
       <div>
       <ul>
-        <h4>{name}</h4>
-        <button onClick={() => handleDelete(id)}>delete</button>
+          <div style={{ display: 'flex', justifyContent: "space-between"}}>
+            <h4 style={{fontFamily: 'Kavoon, cursive' }}>{name}</h4>
+            <button style={{ cursor: 'pointer' }} onClick={() => handleDelete(id)}>delete</button>
+      </div>
         <p>{definition.replace(/\[|\]|"/g, "")}</p>
         <p>{example.replace(/\[|\]|"/g, "")}</p>
         <p>{author}</p>
@@ -39,34 +58,44 @@ function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete }) {
         <div style={tagCon}>
           {tags.map((tag, index) => {  
             return (<div key={index} style={tagin}>
-                  {tag}<span onClick={()=>removeTag(tag)} style={span}>x</span>
+              {tag}<span onClick={() => removeTag(tag)} style={span}>x</span>
                 </div>)
                 })
           }
           <input style={tagIn} onKeyDown={addTag}/>
        </div>
       </div>
-    </div>
+    </Box>
  
  )
 }
 
+
+
 //STYLE
 
-const style = {
-  textAlign: 'left',
-  fontFamily: 'Arial',
-  backgroundColor: "#f5ffe3",
-  fontSize: "20px",
-  border: '1px solid gray',
-  borderRadius: '5px',
-  marginRight: "40px",
-  marginBottom: "30px",
-  border: "1px solid",
-  padding: "5px",
-  boxShadow: " 3px 3px"
 
+
+
+
+const Box = styled.div`
+ transition: box-shadow 0.5s;
+  width: 85%;
+  text-align: left;
+  font-family: Arial;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  background: #f5ffe3;
+  padding: 5px;
+  border-width: 2px;
+  border-color:rgba(22, 33, 33, 1);
+  display: grid;
+  &:hover {
+     box-shadow: 5px 5px rgba(1, 138, 159, 0.5);
+  }
 }
+`
 
 const app = {
  fontFamily: 'Arial',

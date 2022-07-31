@@ -1,4 +1,4 @@
-    require 'faker'
+require 'faker'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -31,8 +31,18 @@ if !json.nil?
 end
 
 puts "🤪 Making userwords..."
-Userword.create(user_id:User.first.id, word_id:Word.first.id)
-Userword.create(user_id:User.first.id, word_id:Word.second.id)
-Userword.create(user_id:User.first.id, word_id:Word.third.id)
+Userword.create(user_id:demo1.id, word_id:Word.first.id)
+Userword.create(user_id:demo1.id, word_id:Word.second.id)
+Userword.create(user_id:demo1.id, word_id:Word.third.id)
 
+puts "🤪 Making tags..."
+Tag.create(id: Faker::IDNumber.valid,name:Faker::Emotion.adjective)
+Tag.create(id: Faker::IDNumber.valid,name:Faker::Emotion.adjective)
+Tag.create(id: Faker::IDNumber.valid,name:Faker::Emotion.adjective)
+Tag.create(id: Faker::IDNumber.valid,name:Faker::Emotion.adjective)
 
+puts "🤪 Making WordTag..."
+WordTag.create(tag_id:Tag.first.id,userword_id:Userword.first.id)
+WordTag.create(tag_id:Tag.second.id,userword_id:Userword.second.id)
+WordTag.create(tag_id:Tag.third.id,userword_id:Userword.second.id)
+WordTag.create(tag_id:Tag.fourth.id,userword_id:Userword.second.id)

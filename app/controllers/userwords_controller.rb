@@ -5,15 +5,22 @@ class UserwordsController < ApplicationController
         render json: Userword.all.order("created_at DESC"),  include: ['word']
     end
 
-    def create
-        userword = @current_user.words.create!(userword_param)
-        render json: userword, status: :accepted
+    # def create
+    #    if  (Userword.name === Word.name && Userword.definition === Word.definition)
+    #        userword = Userword.create!(word_id: params[:word_id],user_id: params[:user_id])
+    #    else
+    #     userword = @current_user.words.create!(userword_param)
+    #    end
+    #     render json: userword, status: :accepted
+    # end
+
+    def userword_tags_index
+        render json: WordTag.where(userword_id: params[:userword_id])
     end
 
     def destroy
-        userword = Userword.where(user_id: params[:user_id])
-        delete_userword = userword.find_by(word_id: params[:word_id])
-        delete_userword.destroy
+        userword = Userword.find_by(user_id: params[:user_id], word_id: params[:word_id])
+        userword.destroy
         head :no_content
     end
 

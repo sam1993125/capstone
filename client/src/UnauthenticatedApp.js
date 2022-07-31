@@ -16,10 +16,11 @@ function UnauthenticatedApp({ setCurrentUser }) {
       <div>
         <h1 style={{
           textAlign: 'center',
-          fontFamily: 'monospace',
+          color: '#018A9F',
+          fontFamily: 'Shrikhand', 
           fontSize: '50px',
           fontWeight: "bold",
-          // textShadow: "1px 1px 2px"
+          textShadow:" 5px 5px rgba(22, 33, 33, 0.2)"
         }}>My Urban Dictionary</h1>
       </div>
       <Switch>

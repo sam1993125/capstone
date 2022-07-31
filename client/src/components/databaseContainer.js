@@ -19,12 +19,12 @@ function DatabaseContainer({ setCurrentUser, currentUser }) {
   }, [search])
   
   return (
-    <div style={{ display: "flex" }}>
+    <div>
+      <SearchBar searchTerm={search} onSearchChange={setSearch} />
       <WordList words={words}
         // handleClick={handleClick}
         setCurrentUser={setCurrentUser} currentUser={currentUser} />
       <div>
-        <SearchBar searchTerm={search} onSearchChange={setSearch} />
       </div>
     </div>
   )
