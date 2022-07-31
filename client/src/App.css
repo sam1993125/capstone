@@ -72,9 +72,10 @@
 
 
 .title{
-  font-family: Arial;
+  font-family: Kavoon, cursive;
   margin-bottom: 30px;
-  margin-left: 50px
+  margin-left: 50px;
+  text-align: relative;
 }
 
 .title h2{

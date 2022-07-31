@@ -37,22 +37,22 @@ function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete }) {
 
 
   
-
-
   return (
 
     <Box>
       <div>
+        <div>
       <ul>
           <div style={{ display: 'flex', justifyContent: "space-between"}}>
             <h4 style={{fontFamily: 'Kavoon, cursive' }}>{name}</h4>
             <button style={{ cursor: 'pointer' }} onClick={() => handleDelete(id)}>delete</button>
       </div>
-        <p>{definition.replace(/\[|\]|"/g, "")}</p>
-        <p>{example.replace(/\[|\]|"/g, "")}</p>
-        <p>{author}</p>
-        <p>{written_on}</p>
+        <Prgh>{definition.replace(/\[|\]|"/g, "")}</Prgh>
+        <Prgh>{example.replace(/\[|\]|"/g, "")}</Prgh>
+        <Prgh>{author}</Prgh>
+        <Prgh>{written_on}</Prgh>
       </ul>
+        </div>
       </div>
       <div style={app}>
         <div style={tagCon}>
@@ -83,6 +83,7 @@ const Box = styled.div`
   width: 85%;
   text-align: left;
   font-family: Arial;
+  margin-left: 9px;
   margin-bottom: 30px;
   border-radius: 10px;
   border: 1px solid gray;
@@ -95,6 +96,10 @@ const Box = styled.div`
      box-shadow: 5px 5px rgba(1, 138, 159, 0.5);
   }
 }
+`
+const Prgh = styled.p`
+  text-align: justify ;
+  margin-right: 30px;
 `
 
 const app = {

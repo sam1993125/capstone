@@ -17,7 +17,7 @@ function UnauthenticatedApp({ setCurrentUser }) {
         <h1 style={{
           textAlign: 'center',
           color: '#018A9F',
-          fontFamily: 'Shrikhand', 
+          fontFamily: 'Kavoon',
           fontSize: '50px',
           fontWeight: "bold",
           textShadow:" 5px 5px rgba(22, 33, 33, 0.2)"

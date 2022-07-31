@@ -69,9 +69,9 @@ function Form({ id, currentUser }) {
       }}>
         <p style={{
           textAlign: 'center',
-          fontFamily: 'Arial',
+          fontFamily: 'Kavoon, cursive',
           fontSize: '50px',
-          fontWeight: "bold"
+          
         }}>Add Words</p>
         <form onSubmit={handleSubmit}>
           <p><Input

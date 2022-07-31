@@ -40,17 +40,18 @@ const Search= styled.div`
   padding: 3rem;
   display: flex;
   flex-direction: column;
-  margin-top: 5px
+  margin:10px;
 `
 
 
 const Input = styled.input`
- padding: 0.25rem;
+ padding: 0.7rem;
   border: none;
   font-family: inherit;
   font-size: 1.2em;
   border-bottom: 2px solid gray;
   transition: all 0.2s;
+  margin: 10px
   width: 100%;
     &:focus {
     outline: none;

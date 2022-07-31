@@ -4,8 +4,11 @@ import NavBar from './components/NavBar'
 import UserpageContainer from './components/UserpageContainer'
 import DatabaseContainer from './components/DatabaseContainer'
 import Form from './components/Form'
+/** @jsxImportSource @emotion/react */
+// import { css } from '@emotion/react';
+import styled from '@emotion/styled'
+import { Switch, Route, Redirect, useHistory, NavLink } from 'react-router-dom'
 
-import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
     const history = useHistory()
@@ -30,16 +33,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
     return (
         <div>
-            <div>
-                <h3 style={{
-                    textAlign: 'center',
-                    fontFamily: 'Shrikhand',
-                    fontSize: '50px',
-                    color: "#018A9F", 
-                    fontWeight: "bold",
-                    textShadow: " 5px 5px rgba(22, 33, 33, 0.2)"
-                }}>My Urban Dictionary</h3>
-            </div>
+            <Title><NavLink to="/" style={({ "textDecoration": "none", "color": "#018A9F" })}> My Urban Dictionary</NavLink></Title>
             <NavBar handleLogout={handleLogout} setCurrentUser={setCurrentUser} currentUser={currentUser} />
             <Switch>
 
@@ -67,6 +61,21 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
     );
 }       
+
+
+const Title = styled.h3`
+text-align: center;
+font-family: 'Kavoon', cursive;
+font-size: 40px;
+color: #018A9F;  
+ transition: text-shadow 1s;
+ &:hover {
+    text-shadow: 5px 5px rgba(22, 33, 33, 0.2)
+  }
+}
+
+
+`
 
 
 export default AuthenticatedApp;
