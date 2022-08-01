@@ -1,13 +1,13 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import NavBar from './components/NavBar'
-import UserpageContainer from './components/UserpageContainer'
-import DatabaseContainer from './components/DatabaseContainer'
-import Form from './components/Form'
+import NavBar from './components/NavBar';
+import UserpageContainer from './components/UserpageContainer';
+import DatabaseContainer from './components/DatabaseContainer';
+import Form from './components/Form';
 /** @jsxImportSource @emotion/react */
 // import { css } from '@emotion/react';
-import styled from '@emotion/styled'
-import { Switch, Route, Redirect, useHistory, NavLink } from 'react-router-dom'
+import styled from '@emotion/styled';
+import { Switch, Route, Redirect, useHistory, NavLink } from 'react-router-dom';
 
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
