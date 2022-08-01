@@ -1,8 +1,8 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
-import UserpageContainer from './components/UserpageContainer';
-import DatabaseContainer from './components/DatabaseContainer';
+import UserpageContainer from './components/userpageContainer';
+import DatabaseContainer from './components/databaseContainer';
 import Form from './components/Form';
 /** @jsxImportSource @emotion/react */
 // import { css } from '@emotion/react';
