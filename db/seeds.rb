@@ -42,7 +42,7 @@ Tag.create(id: Faker::IDNumber.valid,name:Faker::Emotion.adjective)
 Tag.create(id: Faker::IDNumber.valid,name:Faker::Emotion.adjective)
 
 puts "🤪 Making WordTag..."
-WordTag.create(tag_id:Tag.first.id, userword_id: Userword.first.id)
-WordTag.create(tag_id:Tag.second.id, userword_id: Userword.first.id)
-WordTag.create(tag_id:Tag.third.id, userword_id: Userword.first.id)
-WordTag.create(tag_id:Tag.fourth.id, userword_id: Userword.first.id)
+WordTag.create(tag_id:Tag.first.id, userword_id: Userword.last.id)
+WordTag.create(tag_id:Tag.second.id, userword_id: Userword.last.id)
+WordTag.create(tag_id:Tag.third.id, userword_id: Userword.last.id)
+WordTag.create(tag_id:Tag.fourth.id, userword_id: Userword.last.id)

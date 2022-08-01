@@ -36,7 +36,8 @@ skip_before_action :authenticate_user
     params.permit(:username, :password, :fullname, :email)
   end
 
-   def word_param
-        params.permit(:name, :definition, :example, :written_on, :author)
+  def word_param
+    params.permit(:name, :definition, :example, :written_on, :author)
   end
+
 end

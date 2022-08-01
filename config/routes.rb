@@ -24,7 +24,9 @@ Rails.application.routes.draw do
   
   #WordTag
   get "/wordtags", to: "word_tags#index"
-  
+  post "/wordtags/:userword_id", to: "userwords#tags_create"
+  delete "/wordtags/:id", to: "word_tags#destroy"
+
   # Routing logic: fallback requests for React Router.
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

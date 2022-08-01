@@ -83,7 +83,6 @@ const Box = styled.div`
   width: 85%;
   text-align: left;
   font-family: Arial;
-  margin-left: 9px;
   margin-bottom: 30px;
   border-radius: 10px;
   border: 1px solid gray;
@@ -95,8 +94,15 @@ const Box = styled.div`
   &:hover {
      box-shadow: 5px 5px rgba(1, 138, 159, 0.5);
   }
+@media (min-width: 748px) {
+
+  .card {
+    width: calc(50% - 2rem);
+  }
+}
 }
 `
+
 const Prgh = styled.p`
   text-align: justify ;
   margin-right: 30px;

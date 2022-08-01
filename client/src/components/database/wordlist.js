@@ -22,14 +22,24 @@ function WordList({ words, currentUser }) {
         </section>
     )
 }
-const List = styled.ul`
-  
 
+const List = styled.div`    
 width: auto;
+position: relative;
+  	left: 30px;
+  	top: 30px;
+  	right: 30px;
+  	bottom: 30px;
 display: grid;
-grid-template-columns: repeat(2, 2fr);
+grid-template-columns: repeat(2, 1fr);
 grid-auto-rows: minmax(100px, auto);
 gap: 1rem;
+  @media screen and (max-width: 748px){
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        left: 20px;
+    }
 
 `
 
