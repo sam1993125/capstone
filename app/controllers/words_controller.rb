@@ -9,6 +9,8 @@ class WordsController < ApplicationController
         render json: Word.find(params[:id])
     end
 
+ 
+
     private
     def word_param
         params.permit(:name, :definition, :example, :written_on, :author)

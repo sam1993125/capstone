@@ -30,6 +30,10 @@ skip_before_action :authenticate_user
       render json: current_user.words.order("created_at DESC")
   end
 
+    def user_userwords_index
+      render json: current_user.userwords.order("created_at DESC")
+  end
+
   private
 
   def user_params

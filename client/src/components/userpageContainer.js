@@ -9,18 +9,16 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
 
   const [words, setWords] = useState([])
 
-  useEffect(() => {
-    fetch(`/users/${currentUser.id}/words`)
-      .then((r) => r.json())
-      .then(data => 
-        // console.log("I am being called",data)
-        setWords(data)
-      ) 
-  }, [])
+    useEffect(() => {
+      fetch(`/users/${currentUser.id}/words`)
+        .then((r) => r.json())
+        .then(data => 
+          // console.log("I am being called",data)
+          setWords(data)
+        )
+    }, [])
 
-  // console.log("I am being called", words)
 
-  
   function handleDelete(id) {
     console.log(id)
     fetch(`/userwords/${id}`, { 
@@ -43,7 +41,7 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
       <WordList words={words} setCurrentUser={setCurrentUser} currentUser={currentUser} handleDelete={handleDelete} />
       {words.length > 0 ? (null
       ) : (
-          <Margin>
+        <Margin>
             <Button><NavLink to="/database" style={({ "text-decoration": "none", "color": "#018A9F", })}>Add Your Word!</NavLink></Button>
           </Margin>
       )} 
@@ -71,12 +69,15 @@ const Button = styled.button`
 
 `
 const Margin = styled.div`
-display: flex;
-margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
       @media screen and (max-width: 748px){
         display: flex;
         height: auto;
     }
     
 `
+
+
 export default UserpageContainer

@@ -48,30 +48,11 @@ function Form({ id, currentUser }) {
   }
 
   return (
-    <div style = {{
-        marginRight: "20px",
-        marginLeft: "20px",
-        marginBottom: "50px"}}>
-      <div style = {{
-        textAlign: 'center',
-        fontFamily: 'Arial',
-        backgroundColor: "#f5ffe3",
-        fontSize: "24px",
-        border: '1px solid gray',
-        borderRadius: '5px',
-        marginRight: "28px",
-        marginLeft: "28px",
-        marginBottom: "30px",
-        // border: "1px solid",
-        padding: "5px",
-        boxShadow: "3px 3px"
-
-      }}>
+    <Container>
         <p style={{
           textAlign: 'center',
-          fontFamily: 'Mouse Memoirs',
+          fontFamily: 'Roboto Condensed',
           fontSize: '50px',
-          
         }}>Add Words</p>
         <form onSubmit={handleSubmit}>
           <p><Input
@@ -120,8 +101,7 @@ function Form({ id, currentUser }) {
           </p>
           <Button type="submit">Add</Button>
         </form>
-      </div>
-    </div>
+    </Container>
   )
 }
 
@@ -132,18 +112,34 @@ const Button = styled.button`
   border-radius: 4px;
   font-weight: bold;
   &:hover {
-    color: white;
   }
 `
 
 const Input = styled.input`
-  width: 100 %;
+  width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline - block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border - box;
+`
+
+const Container = styled.div`
+      text-align: center;
+      font-family: 'Roboto Condensed', sans-serif;
+      background-color: #f5ffe3;
+      font-size: 24px;
+      border: '1px solid gray',
+      borderRadius: '5px',
+      marginRight: "28px",
+      marginLeft: "28px",
+      marginBottom: "30px",
+      marginRight: "20px",
+      marginLeft: "20px",
+      marginBottom: "50px",
+      padding: "5px",
+      boxShadow: "3px 3px"
 `
 
 

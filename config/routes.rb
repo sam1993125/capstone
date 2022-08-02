@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   #User
-  post "users/:user_id/words", to: "users#words_create"
-  get "users/:user_id/words", to: "users#user_words_index"
+  post "/users/:user_id/words", to: "users#words_create"
+  get "/users/:user_id/words", to: "users#user_words_index"
+  get "/users/:user_id/userwords", to: "users#user_userwords_index"
+  
 
   #Words
   get "/words", to: "words#index"

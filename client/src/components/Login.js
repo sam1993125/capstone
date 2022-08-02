@@ -32,11 +32,11 @@ function Login({ setCurrentUser }) {
     }
     return (
         <div>
-
             <Redirect to="/" />
             <Form onSubmit={handleSubmit}>
                 {/* <h1>Log In</h1> */}
                 <p>
+
                     <Input
                         type="text"
                         name="username"
@@ -68,7 +68,7 @@ function Login({ setCurrentUser }) {
 
 const Button = styled.button`
     padding: 20px;
-    background-color: #f5ffe3;
+    background: rgba(1,138,159, 0.25);
     font-family: 'Mouse Memoirs', sans-serif;
     font-size: 24px;
     border-radius: 8px;
@@ -96,7 +96,7 @@ const Input = styled.input`
       letter-spacing: 0.05em;
       font-size: 16px;
       &:hover{
-        background: transparent;
+        background: white;
         outline: none;
         border: 0.5;
       }

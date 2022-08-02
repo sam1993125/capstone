@@ -6,11 +6,11 @@ import styled, { keyframes } from "styled-components";
 
 function UnauthenticatedApp({ setCurrentUser }) {
   return (
-    <div style={{
+    <Log style={{
       maxWidth: "600px",
-      margin: "70px auto",
-      padding: "40px",
-      textAlign: "center"
+      margin: "100px auto",
+      padding: "5px",
+      textAlign: "center",
 
     }}>
       <div>
@@ -21,7 +21,9 @@ function UnauthenticatedApp({ setCurrentUser }) {
           fontSize: '60px',
           fontWeight: "bold",
           textShadow:" 5px 5px rgba(22, 33, 33, 0.2)"
+
         }}>My Urban Dictionary</h1>
+        <H1>Grood with words.</H1>
       </div>
       <Switch>
         <Route exact path="/">
@@ -35,19 +37,38 @@ function UnauthenticatedApp({ setCurrentUser }) {
       <Rotate>😹</Rotate>
       <Rotate>🍵</Rotate>
       <Rotate>🫣</Rotate>
-    </div>
+    </Log>
   )
 }
 
+const Log = styled.div`
+  border-radius: 10px;
+  transition: box-shadow 1s;
+  padding: 50px;
+  background-color: #f5ffe3;
+  box-shadow: 5px 5px rgba(22, 33, 33, 0.1);
+`
+const H1 = styled.h1`
+  margin: auto;
+  padding: 20px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color :#018A9F;
+  align-item:center;
+  text-shadow: 5px 5px rgba(22, 33, 33, 0.2);
+    
+`
 
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`;
+
+  const rotate = keyframes`
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  `
 
 // Here we create a component that will rotate everything we pass in over two seconds
 const Rotate = styled.div`

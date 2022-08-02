@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 /** @jsxImportSource @emotion/react */
 // import { css } from '@emotion/react';
 import styled from '@emotion/styled'
+import { keyframes } from 'styled-components'
 
 
 function NavBar({ handleLogout }) {
@@ -42,11 +43,12 @@ function NavBar({ handleLogout }) {
         </Nav>
       )}
       
-      {screenWidth > 748 ? null : (<Nav><Button onClick={toggleNav} >🤨</Button></Nav>)}
+      {screenWidth > 748 ? null : (<Nav><Button onClick={toggleNav}>🤨</Button></Nav>)}
       
       </div>
   )
 }
+
 
 const Button = styled.button`
   padding: 20px;
@@ -61,7 +63,7 @@ const Button = styled.button`
   cursor: pointer;
   transition: box-shadow 0.5s;
   &:hover {
-     box-shadow: 5px 5px rgba(22, 33, 33, 0.1);
+    box-shadow: 5px 5px rgba(22, 33, 33, 0.1);
   }
   @media screen and (max-width: 748px){
         text-align: center;
@@ -73,6 +75,9 @@ const Button = styled.button`
     }
 }
 `
+
+
+
 const Nav = styled.div`
 margin: 10px;
 display: flex;

@@ -5,24 +5,23 @@ import WordCard from "./wordcard"
 import styled from '@emotion/styled'
 
 
-function WordList({ words, handleDelete }) {
+function WordList({ uwid, words, handleDelete, currentUser }) {
 
-    // console.log(words)
-
+   
     const userwords = words.map((word) => (
         <WordCard
-            id={word.id}
-            aword={word}
-            handleDelete={handleDelete}
+        id={word.id}
+        aword={word}
+        handleDelete={handleDelete}
+        userword={word.userwords[0]}
         />
     ))
 
     return (
         <div>
-            {/* <h2 className="title">MY SLANGS</h2> */}
-                <List>
-                  {userwords}
-                </List>
+        <List>
+            {userwords}
+        </List>
         </div>
     
     )

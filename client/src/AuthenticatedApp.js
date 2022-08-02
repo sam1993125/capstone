@@ -16,7 +16,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
     const [search, setSearch] = useState("")
     const [words, setWords] = useState([])
 
-    // console.log(words)
+
 
     const handleLogout = () => {
         fetch('/logout', {
@@ -33,7 +33,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
     return (
         <div>
-            <Title><NavLink to="/" style={({ "textDecoration": "none", "color": "#018A9F"})}> My Urban Dictionary</NavLink></Title>
+            <Title><NavLink to="/" style={({ "textDecoration": "none", "color": "#018A9F" })}> My Urban Dictionary</NavLink></Title>
             <NavBar handleLogout={handleLogout} setCurrentUser={setCurrentUser} currentUser={currentUser} />
             <Switch>
 
@@ -63,16 +63,14 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
 }       
 
 
+
 const Title = styled.h3`
 text-align: center;
 font-family: 'Mouse Memoirs', sans-serif;
 font-size: 50px;
 color: #018A9F;  
- transition: text-shadow 1s;
- text-shadow: 5px 5px rgba(22, 33, 33, 0.2)
-
-
+transition: text-shadow 1s;
+text-shadow: 5px 5px rgba(22, 33, 33, 0.2)
 `
-
 
 export default AuthenticatedApp;

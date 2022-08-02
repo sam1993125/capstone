@@ -13,7 +13,7 @@ function DatabaseContainer({ setCurrentUser, currentUser }) {
     fetch(`https://api.urbandictionary.com/v0/define?term=${search}`)
       .then((r) => r.json())
       .then(data => {
-        console.log("I am being called:", data)
+        // console.log("I am being called:", data)
         setWords(data.list)
       })
   }, [search])
