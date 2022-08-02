@@ -69,7 +69,7 @@ function Form({ id, currentUser }) {
       }}>
         <p style={{
           textAlign: 'center',
-          fontFamily: 'Kavoon, cursive',
+          fontFamily: 'Mouse Memoirs',
           fontSize: '50px',
           
         }}>Add Words</p>
@@ -142,8 +142,8 @@ const Input = styled.input`
   margin: 8px 0;
   display: inline - block;
   border: 1px solid #ccc;
-  border - radius: 4px;
-  box - sizing: border - box;
+  border-radius: 4px;
+  box-sizing: border - box;
 `
 
 

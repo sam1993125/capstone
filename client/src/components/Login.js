@@ -34,41 +34,33 @@ function Login({ setCurrentUser }) {
         <div>
 
             <Redirect to="/" />
-            <form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit}>
                 {/* <h1>Log In</h1> */}
                 <p>
-                    <label htmlFor="username"
-                        style={style}>
-                        Username
-                    </label>
-                    &nbsp;
-                    &nbsp;
-                    <input
+                    <Input
                         type="text"
                         name="username"
+                        placeholder="username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </p>
                 <p>
-                    <label
-                        htmlFor="password"
-                        style={style}
-                    >
-                        Password
-                    </label>
-                    &nbsp;
-                    &nbsp;
-                    <input
+                    <Input
                         type="password"
-                        name=""
+                        placeholder="password"
+                        name="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </p>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
                 <p><Link to="/signup" style={style}>No account here? OMG!</Link></p>
                 <Button type="submit">Log In</Button>
-            </form>
+            </Form>
         </div>
     )
 }
@@ -77,15 +69,48 @@ function Login({ setCurrentUser }) {
 const Button = styled.button`
     padding: 20px;
     background-color: #f5ffe3;
+    font-family: 'Mouse Memoirs', sans-serif;
     font-size: 24px;
-    border-radius: 4px;
+    border-radius: 8px;
     font-weight: bold;
     margin: 10px;
     align: cetner
 `
+
+const Form = styled.form`
+width: 300px;
+  padding: 64px 15px 24px;
+  margin: auto auto;
+`
+ 
+const Input = styled.input`
+    width: 100%;
+    displau:flex;
+    border-radius: 10px;
+    margin-right:80%;
+    padding: 8px 5px;
+      border: 0.5;
+      background-color: #f5ffe3;
+      color: #018A9F;
+      font-family: 'Roboto Condensed';
+      letter-spacing: 0.05em;
+      font-size: 16px;
+      &:hover{
+        background: transparent;
+        outline: none;
+        border: 0.5;
+      }
+      &:focus {
+        outline: none;
+        border: 0.5;
+      }
+    }
+
+`
+
 const style = {
     textAlign: 'left',
-    fontFamily: 'Arial',
+    fontFamily: 'Roboto Condensed, sans-serif',
     fontWeight: "bold",
     textDecoration: "none"
 }

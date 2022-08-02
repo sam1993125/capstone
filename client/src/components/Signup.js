@@ -128,7 +128,7 @@ const Button = styled.button`
 `
 const style = {
     textAlign: 'left',
-    fontFamily: 'Arial',
+    fontFamily: 'Roboto Condensed, sans-serif',
     fontWeight: "bold",
     textDecoration: "none"
 }

@@ -45,6 +45,7 @@ const Search= styled.div`
 
 
 const Input = styled.input`
+ border-radius: 7px;
  padding: 0.7rem;
   border: none;
   font-family: inherit;

@@ -11,11 +11,11 @@ function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete }) {
   
 
 
-  // useEffect((id) => {
-  //   fetch(`/userwords/5/tags`)
+  // useEffect(() => {
+  //   if (!tags) return;
+  //   fetch(`/userwords/${id}/tags`)
   //     .then((r) => r.json())
-  //     .then(data => setTags(data)) 
-  //       // console.log("I am being called", data)
+  //     .then(data => console.log(data)) 
   // }, [])
 
   // console.log(tags)
@@ -44,7 +44,7 @@ function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete }) {
         <div>
       <ul>
           <div style={{ display: 'flex', justifyContent: "space-between"}}>
-            <h4 style={{fontFamily: 'Kavoon, cursive' }}>{name}</h4>
+              <h4 style={{ fontFamily: 'Mouse Memoirs', fontSize:'25px' }}>{name}</h4>
             <button style={{ cursor: 'pointer' }} onClick={() => handleDelete(id)}>delete</button>
       </div>
         <Prgh>{definition.replace(/\[|\]|"/g, "")}</Prgh>
@@ -61,8 +61,8 @@ function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete }) {
               {tag}<span onClick={() => removeTag(tag)} style={span}>x</span>
                 </div>)
                 })
-          }
-          <input style={tagIn} onKeyDown={addTag}/>
+              }
+              <input style={tagIn} onKeyDown={addTag}/>
        </div>
       </div>
     </Box>
@@ -88,7 +88,6 @@ const Box = styled.div`
   border: 1px solid gray;
   background: #f5ffe3;
   padding: 5px;
-  border-width: 2px;
   border-color:rgba(22, 33, 33, 1);
   display: grid;
   &:hover {
@@ -106,6 +105,7 @@ const Box = styled.div`
 const Prgh = styled.p`
   text-align: justify ;
   margin-right: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
 `
 
 const app = {
@@ -124,12 +124,14 @@ const tagCon = {
   border: '1px solid gray', 
   borderRadius :'5px', 
   padding: "10px",
-  boxShadow: " 3px 3px"
+
 
 }
 
 const tagin = {
+
   display: "flex",
+
   padding: "5px",
   border: '1px solid gray',
   borderRadius: '5px',
@@ -138,10 +140,11 @@ const tagin = {
   backgroundColor: "#f5ffe3",
   marginRight: '5px',
   margin: '2px 5px 2px 0px',
-  boxShadow: " 3px 3px"
+
 }
 
 const tagIn = { 
+  
   border: 'none',
   flex: 1,
   backgroundColor: "#f5ffe3",
@@ -150,6 +153,7 @@ const tagIn = {
 }
 
 const span = {
+ 
   marginLeft: "5px", 
   cursor: 'pointer',
   textAlign: 'center',

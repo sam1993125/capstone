@@ -33,14 +33,14 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
     return (
         <div>
-            <Title><NavLink to="/" style={({ "textDecoration": "none", "color": "#018A9F" })}> My Urban Dictionary</NavLink></Title>
+            <Title><NavLink to="/" style={({ "textDecoration": "none", "color": "#018A9F"})}> My Urban Dictionary</NavLink></Title>
             <NavBar handleLogout={handleLogout} setCurrentUser={setCurrentUser} currentUser={currentUser} />
             <Switch>
 
                 <Route exact path="/">
                     <div>
                         <UserpageContainer setCurrentUser={setCurrentUser} currentUser={currentUser} />
-                    </div>
+                    </div>  
                 </Route>
 
                 <Route exact path="/database">
@@ -65,14 +65,11 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
 const Title = styled.h3`
 text-align: center;
-font-family: 'Kavoon', cursive;
-font-size: 40px;
+font-family: 'Mouse Memoirs', sans-serif;
+font-size: 50px;
 color: #018A9F;  
  transition: text-shadow 1s;
- &:hover {
-    text-shadow: 5px 5px rgba(22, 33, 33, 0.2)
-  }
-}
+ text-shadow: 5px 5px rgba(22, 33, 33, 0.2)
 
 
 `

@@ -32,7 +32,7 @@ function NavBar({ handleLogout }) {
       {(toggleMenu || screenWidth > 748) && (
 
         <Nav>
-        <Button><NavLink to="/" style={({ "textDecoration": "none", "color": "#018A9F" })}>My Slangs </NavLink></Button>
+        <Button><NavLink to="/" style={({ "text-decoration": "none", "color": "#018A9F" })}>My Slangs </NavLink></Button>
 
         <Button><NavLink to="/database" style={({ "text-decoration": "none", "color": "#018A9F", })}>Search Slangs</NavLink></Button>
 
@@ -50,16 +50,18 @@ function NavBar({ handleLogout }) {
 
 const Button = styled.button`
   padding: 20px;
-  align-items: center;
   background-color: #f5ffe3;
-  font-family: 'Kavoon', cursive;
+  font-family: 'Mouse Memoirs', sans-serif;
   font-size: 24px;
   border-radius: 4px;
   font-weight: bold;
+  border-color :#f5ffe3;
+  border-width: 1px;
+  text-decroration: none;
   cursor: pointer;
   transition: box-shadow 0.5s;
   &:hover {
-     box-shadow: 5px 5px rgba(22, 33, 33, 1);
+     box-shadow: 5px 5px rgba(22, 33, 33, 0.1);
   }
   @media screen and (max-width: 748px){
         text-align: center;

@@ -56,13 +56,13 @@ function WordCard({id, aword, setCurrentUser, currentUser }) {
         <Box>
           <ul>
             <div style={{ display: 'flex', justifyContent: "space-between"}}>
-                <h4 style={{ fontFamily: 'Kavoon, cursive' }}>{word}</h4>
+            <h4 style={{ fontFamily: 'Mouse Memoirs'}}>{word}</h4>
                 <button onClick={() => handleClick()}>➕</button>
             </div>
-                <p>{definition.replace(/\[|\]|"/g, "")}</p>
-                <p>{example.replace(/\[|\]|"/g, "")}</p>
-                <p>{author}</p>
-                <p>{written_on.slice(0, written_on.indexOf('T'))}</p>
+          <Prgh>{definition.replace(/\[|\]|"/g, "")}</Prgh>
+          <Prgh>{example.replace(/\[|\]|"/g, "")}</Prgh>
+          <Prgh>{author}</Prgh>
+          <Prgh>{written_on.slice(0, written_on.indexOf('T'))}</Prgh>
         </ul>
          </Box >
     )
@@ -92,5 +92,11 @@ const Box = styled.div`
 }
 }
 `
+const Prgh = styled.p`
+  text-align: justify ;
+  margin-right: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
+`
+
 
 export default WordCard

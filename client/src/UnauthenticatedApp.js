@@ -17,8 +17,8 @@ function UnauthenticatedApp({ setCurrentUser }) {
         <h1 style={{
           textAlign: 'center',
           color: '#018A9F',
-          fontFamily: 'Kavoon',
-          fontSize: '50px',
+          fontFamily: 'Mouse Memoirs',
+          fontSize: '60px',
           fontWeight: "bold",
           textShadow:" 5px 5px rgba(22, 33, 33, 0.2)"
         }}>My Urban Dictionary</h1>
