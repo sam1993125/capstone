@@ -15,11 +15,11 @@ function WordList({ words, currentUser }) {
     ))
  
     return (
-        <section>
+        <div>
             <List>
                 {userwords}
             </List>
-        </section>
+        </div>
     )
 }
 
@@ -33,12 +33,11 @@ position: relative;
 display: grid;
 grid-template-columns: repeat(2, 1fr);
 grid-auto-rows: minmax(100px, auto);
-gap: 1rem;
+gap: 0.5rem;
   @media screen and (max-width: 748px){
         display: flex;
         flex-direction: column;
         height: auto;
-        left: 20px;
     }
 
 `

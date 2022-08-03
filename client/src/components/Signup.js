@@ -41,91 +41,93 @@ function Signup({ setCurrentUser }) {
     return (
         <div>
 
-            <form onSubmit={handleSubmit}>
-                {/* <h1>Sign Up</h1> */}
+            <Form onSubmit={handleSubmit}>
                 <p>
-                    <label
-                        htmlFor="username"
-                        style={style}
-                    >
-                        Username
-                    </label>
-                    &nbsp;
-                    &nbsp;
-                    <input
+                    <Input
                         type="text"
                         name="username"
+                        placeholder="username"
                         value={username}
-                        style={{ borderRadius: "4px" }}
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </p>
                 <p>
-                    <label
-                        htmlFor="fullname"
-                        style={style}
-                    >
-                        Full Name
-                    </label>
-                    &nbsp;
-                    &nbsp;
-                    <input
+                    <Input
                         type="text"
                         name="fullname"
+                        placeholder="fullname"
                         value={fullname}
                         onChange={(e) => setFullname(e.target.value)}
                     />
                 </p>
 
                 <p>
-                    <label
-                        htmlFor="password"
-                        style={style}
-                    >
-                        Password
-                    </label>
-                    &nbsp;
-                    &nbsp;
-                    <input
+                    <Input
                         type="password"
-                        name=""
+                        name="password"
+                        placeholder="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </p>
-
                 <p>
-                    <label
-                        htmlFor="email"
-                        style={style}
-                    >
-                        Email
-                    </label>
-                    &nbsp;
-                    &nbsp;
-                    <input
+                    <Input
                         type="email"
                         name="email"
+                        placeholder="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </p>
                 <p><Link to="/login" style={style}>You have account? Then why u here?</Link></p>
                 <Button type="submit">Sign Up</Button>
-            </form>
+            </Form>
         </div>
     )
 }
 
 const Button = styled.button`
- padding: 20px;
-  background-color: #f5ffe3;
-  font-size: 24px;
-  border-radius: 4px;
-  font-weight: bold;
-  margin: 10px;
-  align: cetner
+    padding: 20px;
+    background: rgba(1,138,159, 0.25);
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin: 10px;
+    align: cetner
 `
+
+const Input = styled.input`
+    width: 100%;
+    displau:flex;
+    border-radius: 10px;
+    margin-right:80%;
+    padding: 8px 5px;
+      border: 0.5;
+      background-color: #f5ffe3;
+      color: #018A9F;
+      font-family: 'Roboto Condensed';
+      letter-spacing: 0.05em;
+      font-size: 16px;
+      &:hover{
+        background: white;
+        outline: none;
+        border: 0.5;
+      }
+      &:focus {
+        outline: none;
+        border: 0.5;
+      }
+    }
+
+`
+
+const Form = styled.form`
+width: 300px;
+  padding: 64px 15px 24px;
+  margin: auto auto;
+`
+
 const style = {
     textAlign: 'left',
     fontFamily: 'Roboto Condensed, sans-serif',

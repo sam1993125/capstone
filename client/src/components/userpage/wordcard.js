@@ -8,8 +8,8 @@ function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete, userwo
   const { name, definition, example, author, written_on } = aword
 
   const [tags, setTags] = useState([]);
-  // const [tagname, setTagname] = useState([]);
   const history = useHistory()
+  // const [tagname, setTagname] = useState([]);
   // const [posted, setPosted] = useState(false);
   // const [tagInput, setTagInput] = useState([]);
   // const [isHover, setIshover] = useState(false);
@@ -29,13 +29,14 @@ function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete, userwo
   //     .then(data => setTags(data))
   // }, [posted])
 
-  console.log(tags)
-
   //   console.log(e.key, e.target.value)
   // let tagname = e.target.value
   //   console.log({
   //     name: tagname,
   //     userword_id: aword.id})
+
+  // console.log(tags)
+
 
   function addTag(e){
     if (e.key === "Enter"){
@@ -52,6 +53,7 @@ function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete, userwo
       e.target.value = ''
     })
       history.push("/");
+
     //    .then((r) => {
     //     if (r.ok) {
     //       r.json()
@@ -164,10 +166,6 @@ function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete, userwo
 
 //STYLE
 
-
-
-
-
 const Box = styled.div`
  transition: box-shadow 0.5s;
   width: 80%;
@@ -239,8 +237,7 @@ const tagCon = {
   border: '1px solid gray', 
   borderRadius :'5px', 
   padding: "10px",
-
-
+  boxShadow: "5px 5px rgba(22, 33, 33, 0.1)"
 }
 
 const tagin = {

@@ -3,4 +3,5 @@ class UserwordsSerializer < ActiveModel::Serializer
 
   belongs_to :word
   belongs_to :user
+  has_many :tags, through: :word_tags
 end

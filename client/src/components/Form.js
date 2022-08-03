@@ -53,6 +53,7 @@ function Form({ id, currentUser }) {
           textAlign: 'center',
           fontFamily: 'Roboto Condensed',
           fontSize: '50px',
+          textShadow: '5px 5px rgba(22, 33, 33, 0.2)'
         }}>Add Words</p>
         <form onSubmit={handleSubmit}>
           <p><Input
@@ -107,17 +108,36 @@ function Form({ id, currentUser }) {
 
 const Button = styled.button`
   padding: 10px;
-  background-color: #f5ffe3;
-  font-size: 10px;
+  margin:10px;
+  background: rgba(1,138,159, 0.6);
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 24px;
   border-radius: 4px;
   font-weight: bold;
+  color: white; 
+  border-color :#f5ffe3;
+  border-width: 1px;
+  text-decroration: none;
+  cursor: pointer;
+  transition: box-shadow 0.5s;
   &:hover {
+    box-shadow: 5px 5px rgba(22, 33, 33, 0.1);
   }
+  @media screen and (max-width: 748px){
+        text-align: center;
+        margin-right: 0px;
+        padding: 20px 0;
+         &:hover {
+     box-shadow: none
+  }
+    }
+}
 `
 
 const Input = styled.input`
-  width: 30%;
+  width: 60%;
   padding: 12px 20px;
+  size: 50px;
   margin: 8px 0;
   display: inline - block;
   border: 1px solid #ccc;
@@ -126,20 +146,22 @@ const Input = styled.input`
 `
 
 const Container = styled.div`
-      text-align: center;
-      font-family: 'Roboto Condensed', sans-serif;
-      background-color: #f5ffe3;
-      font-size: 24px;
-      border: '1px solid gray',
-      borderRadius: '5px',
-      marginRight: "28px",
-      marginLeft: "28px",
-      marginBottom: "30px",
-      marginRight: "20px",
-      marginLeft: "20px",
-      marginBottom: "50px",
-      padding: "5px",
-      boxShadow: "3px 3px"
+      border-radius: 20px;
+  transition: box-shadow 1s;
+  padding: 20px;
+  background-color: #f5ffe3;
+  box-shadow: 5px 5px rgba(22, 33, 33, 0.1);
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 5px;
+  text-align: center;
+  @media screen and (max-width: 748px){
+      width: calc (100% - 2rem);
+        margin: 20px;
+        height: auto;
+        width: auto;
+    }
+
 `
 
 

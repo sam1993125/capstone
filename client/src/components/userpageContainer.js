@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import WordList from "./userpage/wordlist"
+import SearchBar from "./SearchBar"
 import { NavLink } from "react-router-dom";
 /** @jsxImportSource @emotion/react */
 // import { css } from '@emotion/react';
@@ -8,6 +9,10 @@ import styled from '@emotion/styled'
 function UserpageContainer({ setCurrentUser, currentUser }) {
 
   const [words, setWords] = useState([])
+  // const [search, setSearch] = useState("")
+  // const [userwords, setUserwords] = useState([])
+
+  // const [tags, setTags] = useState([])
 
     useEffect(() => {                     
       fetch(`/users/${currentUser.id}/words`)
@@ -16,9 +21,23 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
           // console.log("I am being called",data)
           setWords(data)
         )
-    }, [])                    
+    }, [])  
 
-    // console.log(words)
+
+  useEffect(() => {
+    fetch(`/users/${currentUser.id}/userwords`)
+      .then((r) => r.json())
+      .then(data =>
+        console.log("I am being called",data)
+        // setUserwords(data)
+      )
+  }, [])  
+  
+  // const selecttags = userwords.filter((tag) =>Object.values(tag).join("_").toLowerCase().includes(search.toLowerCase())) 
+  
+  // const selecttags  = userwords.filter(tag => console.log(tag.filter))
+
+  // selecttags.filter(t => console.log(t))
 
 
   function handleDelete(id) {
@@ -40,13 +59,15 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
 
   return (
     <div>
-      <WordList words={words} setCurrentUser={setCurrentUser} currentUser={currentUser} handleDelete={handleDelete} />
+    
       {words.length > 0 ? (null
+      // <SearchBar searchTerm={search} onSearchChange={setSearch} />
       ) : (
         <Margin>
             <Button><NavLink to="/database" style={({ "text-decoration": "none", "color": "#018A9F", })}>Add Your Word!</NavLink></Button>
           </Margin>
       )} 
+      <WordList words={words} setCurrentUser={setCurrentUser} currentUser={currentUser} handleDelete={handleDelete} />
     </div>
   )
 }

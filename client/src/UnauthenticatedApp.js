@@ -40,6 +40,8 @@ const Log = styled.div`
   transition: box-shadow 1s;
   padding: 20px;
   background-color: #f5ffe3;
+
+  align-items: center;
   box-shadow: 5px 5px rgba(22, 33, 33, 0.1);
   max-width: 600px;
   margin: 100px auto;

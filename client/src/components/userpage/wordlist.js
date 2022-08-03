@@ -30,6 +30,7 @@ function WordList({ uwid, words, handleDelete, currentUser }) {
 const List = styled.div`    
 width: auto;
 position: relative;
+
   	left: 30px;
   	top: 30px;
   	right: 30px;

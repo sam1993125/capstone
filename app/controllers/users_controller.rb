@@ -31,7 +31,7 @@ skip_before_action :authenticate_user
   end
 
     def user_userwords_index
-      render json: current_user.userwords.order("created_at DESC")
+      render json: current_user.userwords.order("created_at DESC"),  include: [ 'tags']
   end
 
   private
