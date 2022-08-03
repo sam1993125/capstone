@@ -13,6 +13,7 @@ class UserwordsController < ApplicationController
         userword = Userword.find(params[:userword_id])
         tag = Tag.create!(tag_params)
         userword_tag = WordTag.create!(userword_id: userword.id, tag_id: tag.id)
+        render json: userword_tag
     end
 
     def destroy

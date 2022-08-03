@@ -6,13 +6,7 @@ import styled, { keyframes } from "styled-components";
 
 function UnauthenticatedApp({ setCurrentUser }) {
   return (
-    <Log style={{
-      maxWidth: "600px",
-      margin: "100px auto",
-      padding: "5px",
-      textAlign: "center",
-
-    }}>
+    <Log >
       <div>
         <h1 style={{
           textAlign: 'center',
@@ -42,11 +36,22 @@ function UnauthenticatedApp({ setCurrentUser }) {
 }
 
 const Log = styled.div`
-  border-radius: 10px;
+  border-radius: 20px;
   transition: box-shadow 1s;
-  padding: 50px;
+  padding: 20px;
   background-color: #f5ffe3;
   box-shadow: 5px 5px rgba(22, 33, 33, 0.1);
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 5px;
+  text-align: center;
+  @media screen and (max-width: 748px){
+      width: calc (100% - 2rem);
+        margin: 20px;
+        height: auto;
+        width: auto;
+    }
+
 `
 const H1 = styled.h1`
   margin: auto;

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 /** @jsxImportSource @emotion/react */
 // import { css } from '@emotion/react';
 import styled from '@emotion/styled'
@@ -7,6 +8,10 @@ function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete, userwo
   const { name, definition, example, author, written_on } = aword
 
   const [tags, setTags] = useState([]);
+  // const [tagname, setTagname] = useState([]);
+  const history = useHistory()
+  // const [posted, setPosted] = useState(false);
+  // const [tagInput, setTagInput] = useState([]);
   // const [isHover, setIshover] = useState(false);
   
 
@@ -17,16 +22,90 @@ function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete, userwo
       .then(data => setTags(data))
   }, [])
 
+  // useEffect(() => {
+  //   if (!tags) return;
+  //   fetch(`/userwords/${userword.id}/tags`)
+  //     .then((r) => r.json())
+  //     .then(data => setTags(data))
+  // }, [posted])
 
+  console.log(tags)
 
-  function addTag (e) {
-      console.log(e.target.value, e.key)
-      if (e.key === "Enter"){
-        if (e.target.value.length > 0)
-        {setTags ([...tags, e.target.value])
-        e.target.value =''
-      }}
+  //   console.log(e.key, e.target.value)
+  // let tagname = e.target.value
+  //   console.log({
+  //     name: tagname,
+  //     userword_id: aword.id})
+
+  function addTag(e){
+    if (e.key === "Enter"){
+    fetch(`/wordtags/${userword.id}`, {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({name: e.target.value}),
+    })
+    .then(res => res.json())
+    .then(data => {console.log(data)
+      setTags([...tags, data])
+      e.target.value = ''
+    })
+      history.push("/");
+    //    .then((r) => {
+    //     if (r.ok) {
+    //       r.json()
+    //     }})
+    //     .then(data =>
+    //       {
+    //       setTags([...tags, data])
+    //       if (e.target.value.length > 0){
+    //         e.target.value = ''
+    //       }
+    // }
+    
   }
+}
+
+
+    // fetch(`/userwords/${userword.id}/tags`)
+    //   .then((r) => r.json())
+    //   .then(data => setTags(data))
+    // .then((r) => r.json())
+    // .then((data) => {
+    //   setTags(...tags, data)
+    //   console.log(data)
+    // })
+    
+
+      // fetch(`/wordtags/${userword.id}`, {
+      //   method: "POST",
+      //   headers: {
+      //     'Content-Type': 'application/json'},
+      //   body: JSON.stringify({
+      //     name: tagname,
+      //     // userword_id: aword.id,
+      //   }),
+      // })
+      // .then(res => res.json())
+      // .then(data => {
+      //   console.log(data)
+      //   setTags(...tags, data)})
+      // .then((r) => {
+      //   if (r.ok) {
+      //     r.json()}}).then(data => 
+      //     {
+      //     //setTags(data)
+      //     setTags([...tags, data])
+      //     if (e.target.value.length > 0){
+      //       e.target.value = ''
+      //     }
+      //     history.push("/");
+        
+      //   })
+        // }
+  
+
 
 
   function removeTag (removedTag) {
@@ -64,12 +143,16 @@ function WordCard({ id, aword, setCurrentUser, currentUser, handleDelete, userwo
       <div style={app}>
         <div style={tagCon}>
           {tags.map((tag, index) => {  
-            return (<div key={index} style={tagin}>
-              {tag.tag.name}<span onClick={() => removeTag(tag)} style={span}>x</span>
+            return (<div key={index} style={tagin}> 
+                  <div>{tag.tag.name}<span onClick={() => removeTag(tag)} style={span}>x</span></div>
                 </div>)
                 })
               }
-              <input style={tagIn} onKeyDown={addTag}/>
+              <input style={tagIn} 
+              onKeyDown={addTag}
+              // onChange={(e) => setTagInput(e.target.value)}
+              />
+          {/* <button onClick={addTag}>hi</button> */}
        </div>
       </div>
     </Box>

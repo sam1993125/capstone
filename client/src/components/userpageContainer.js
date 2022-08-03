@@ -9,22 +9,24 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
 
   const [words, setWords] = useState([])
 
-    useEffect(() => {
+    useEffect(() => {                     
       fetch(`/users/${currentUser.id}/words`)
         .then((r) => r.json())
         .then(data => 
           // console.log("I am being called",data)
           setWords(data)
         )
-    }, [])
+    }, [])                    
+
+    // console.log(words)
 
 
   function handleDelete(id) {
     console.log(id)
     fetch(`/userwords/${id}`, { 
-      method: "DELETE",
+      method: "DELETE",                   
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
+      body: JSON.stringify({        
         user_id: currentUser.id,
         word_id: id
       })
@@ -75,6 +77,7 @@ const Margin = styled.div`
       @media screen and (max-width: 748px){
         display: flex;
         height: auto;
+ 
     }
     
 `
