@@ -22,11 +22,11 @@ function SearchBar({ searchTerm, onSearchChange }) {
 
     return (
         <Search onSubmit={handleSubmit}>
-            <Title htmlFor="search">Search Slangs:</Title>
+            {/* <Title htmlFor="search">Search Slangs:</Title> */}
             <Input
                 type="text"
                 id="search"
-                placeholder="Search..."
+                placeholder="Search slangs..."
                 value={searchTerm}
                 onChange={(e) => onSearchChange(e.target.value)}
                 autoComplete="on"

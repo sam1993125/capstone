@@ -54,7 +54,7 @@ function Form({ id, currentUser }) {
           fontFamily: 'Roboto Condensed',
           fontSize: '50px',
           textShadow: '5px 5px rgba(22, 33, 33, 0.2)'
-        }}>Add Words</p>
+        }}>Add Slangs</p>
         <form onSubmit={handleSubmit}>
           <p><Input
             type="text"
@@ -141,7 +141,7 @@ const Input = styled.input`
   margin: 8px 0;
   display: inline - block;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 8px;
   box-sizing: border - box;
 `
 

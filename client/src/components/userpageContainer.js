@@ -9,7 +9,7 @@ import styled from '@emotion/styled'
 function UserpageContainer({ setCurrentUser, currentUser }) {
 
   const [words, setWords] = useState([])
-  // const [search, setSearch] = useState("")
+  const [search, setSearch] = useState("")
   // const [userwords, setUserwords] = useState([])
 
   // const [tags, setTags] = useState([])
@@ -64,7 +64,7 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
       // <SearchBar searchTerm={search} onSearchChange={setSearch} />
       ) : (
         <Margin>
-            <Button><NavLink to="/database" style={({ "text-decoration": "none", "color": "#018A9F", })}>Add Your Word!</NavLink></Button>
+            <Button><NavLink to="/database" style={({ "text-decoration": "none", "color": "white", })}>Add Your Slangs!</NavLink></Button>
           </Margin>
       )} 
       <WordList words={words} setCurrentUser={setCurrentUser} currentUser={currentUser} handleDelete={handleDelete} />
@@ -75,7 +75,7 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
 const Button = styled.button`
   margin: auto;
   padding: 60px;
-  background-color: #f5ffe3;
+  background: url("./giphy.gif") no-repeat scroll 0 0 transparent;
   font-family: 'Mouse Memoirs', sans-serif;
   font-size: 24px;
   border-radius: 4px;
