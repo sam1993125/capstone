@@ -35,3 +35,7 @@ gem "active_model_serializers", "~> 0.10.13"
 
 
 gem "rest-client", "= 2.0.1"
+
+ group :production, :staging do
+      gem 'rails_12factor'
+    end

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import WordList from "./userpage/wordlist"
 import SearchBar from "./SearchBar"
+// import giphy from "./giphy.gif"
 import { NavLink } from "react-router-dom";
 /** @jsxImportSource @emotion/react */
 // import { css } from '@emotion/react';
@@ -9,7 +10,7 @@ import styled from '@emotion/styled'
 function UserpageContainer({ setCurrentUser, currentUser }) {
 
   const [words, setWords] = useState([])
-  const [search, setSearch] = useState("")
+  // const [search, setSearch] = useState("")
   // const [userwords, setUserwords] = useState([])
 
   // const [tags, setTags] = useState([])
@@ -64,7 +65,8 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
       // <SearchBar searchTerm={search} onSearchChange={setSearch} />
       ) : (
         <Margin>
-            <Button><NavLink to="/database" style={({ "text-decoration": "none", "color": "white", })}>Add Your Slangs!</NavLink></Button>
+            <Button><NavLink to="/database" style={({ "text-decoration": "none", "color": "white" })}>Add Your Slangs!</NavLink></Button>
+
           </Margin>
       )} 
       <WordList words={words} setCurrentUser={setCurrentUser} currentUser={currentUser} handleDelete={handleDelete} />
@@ -74,11 +76,12 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
 
 const Button = styled.button`
   margin: auto;
-  padding: 60px;
-  background: url("./giphy.gif") no-repeat scroll 0 0 transparent;
+  padding: 100px;
+  background-image: url('https://s4.gifyu.com/images/giphyc80ae61a12e8e2a5.gif');
+    background-size: cover;
   font-family: 'Mouse Memoirs', sans-serif;
   font-size: 24px;
-  border-radius: 4px;
+  border-radius: 10px;
   font-weight: bold;
   border-color :#f5ffe3;
   border-width: 1px;
