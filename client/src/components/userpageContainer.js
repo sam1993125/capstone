@@ -11,7 +11,7 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
 
   const [words, setWords] = useState([])
   // const [search, setSearch] = useState("")
-  // const [userwords, setUserwords] = useState([])
+  const [userwords, setUserwords] = useState([])
 
   // const [tags, setTags] = useState([])
 
@@ -29,10 +29,11 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
     fetch(`/users/${currentUser.id}/userwords`)
       .then((r) => r.json())
       .then(data =>
-        console.log("I am being called",data)
-        // setUserwords(data)
+        // console.log("I am being called",data)
+        setUserwords(data)
       )
   }, [])  
+  console.log(userwords.tags)
   
   // const selecttags = userwords.filter((tag) =>Object.values(tag).join("_").toLowerCase().includes(search.toLowerCase())) 
   

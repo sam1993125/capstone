@@ -19,7 +19,7 @@ class UserwordsController < ApplicationController
     def destroy
         userword = Userword.find_by(user_id: params[:user_id], word_id: params[:word_id])
         userword.delete
-        head :no_content
+        head :no_content    
     end
 
 
