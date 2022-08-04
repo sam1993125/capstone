@@ -25,15 +25,15 @@ function UserpageContainer({ setCurrentUser, currentUser }) {
     }, [])  
 
 
-  useEffect(() => {
-    fetch(`/users/${currentUser.id}/userwords`)
-      .then((r) => r.json())
-      .then(data =>
-        // console.log("I am being called",data)
-        setUserwords(data)
-      )
-  }, [])  
-  console.log(userwords.tags)
+  // useEffect(() => {
+  //   fetch(`/users/${currentUser.id}/userwords`)
+  //     .then((r) => r.json())
+  //     .then(data =>
+  //       // console.log("I am being called",data)
+  //       setUserwords(data)
+  //     )
+  // }, [])  
+  // console.log(userwords.tags)
   
   // const selecttags = userwords.filter((tag) =>Object.values(tag).join("_").toLowerCase().includes(search.toLowerCase())) 
   
