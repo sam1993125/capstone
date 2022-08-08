@@ -1,20 +1,21 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import React from 'react';
 import NavBar from './components/NavBar';
 import UserpageContainer from './components/userpageContainer';
 import DatabaseContainer from './components/databaseContainer';
 import Form from './components/Form';
+import Profile from './components/profile';
 /** @jsxImportSource @emotion/react */
 // import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Switch, Route, Redirect, useHistory, NavLink } from 'react-router-dom';
 
 
-function AuthenticatedApp({ currentUser, setCurrentUser }) {
+function AuthenticatedApp({ currentUser, setCurrentUser, fullname }) {
     const history = useHistory()
 
-    const [search, setSearch] = useState("")
-    const [words, setWords] = useState([])
+    // const [search, setSearch] = useState("")
+    // const [words, setWords] = useState([])
 
 
 
@@ -33,7 +34,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
     return (
         <div>
-            <Title><NavLink to="/" style={({ "textDecoration": "none", "color": "#018A9F" })}> My Urban Dictionary</NavLink></Title>
+            <Title><NavLink to="/" style={({ "textDecoration": "none", "color": "#018A9F" })}>{fullname}'s Urban Dictionary</NavLink></Title>
             <NavBar handleLogout={handleLogout} setCurrentUser={setCurrentUser} currentUser={currentUser} />
             <Switch>
 
@@ -52,6 +53,12 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
                 <Route exact path="/submit">
                     <div>
                         <Form setCurrentUser={setCurrentUser} currentUser={currentUser} id={currentUser.id} />
+                    </div>
+                </Route>
+
+                <Route exact path="/profile">
+                    <div>
+                        <Profile setCurrentUser={setCurrentUser} currentUser={currentUser} id={currentUser.id} />
                     </div>
                 </Route>
 

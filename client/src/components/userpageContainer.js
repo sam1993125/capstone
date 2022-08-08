@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import WordList from "./userpage/wordlist"
-import SearchBar from "./SearchBar"
+// import SearchBar from "./SearchBar"
 // import giphy from "./giphy.gif"
 import { NavLink } from "react-router-dom";
 /** @jsxImportSource @emotion/react */
