@@ -1,4 +1,4 @@
-import { useState, useEffect, useHistory } from 'react'
+import { useState, useEffect } from 'react'
 import WordList from "./database/wordlist"
 import SearchBar from "./SearchBar"
 

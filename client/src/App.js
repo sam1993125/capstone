@@ -24,12 +24,15 @@ function App() {
       })
   }, [])
 
+  // console.log(currentUser)
+
   if (!authChecked) { return <div></div> }
   return (
     <Router>
       {currentUser ? (
         <AuthenticatedApp
           setCurrentUser={setCurrentUser}
+          fullname={currentUser.fullname}
           currentUser={currentUser}
         />
       ) : (

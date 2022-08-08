@@ -39,6 +39,8 @@ function NavBar({ handleLogout }) {
 
         <Button><NavLink to="/submit" style={({ "text-decoration": "none", "color": "#018A9F", })}>Submit Your Slangs</NavLink></Button>
 
+        <Button><NavLink to="/profile" style={({ "text-decoration": "none", "color": "#018A9F", })}>Profile</NavLink></Button>
+
         <Button><NavLink to="/" onClick={handleLogout} style={({ "text-decoration": "none", "color": "#018A9F", })}>Logout</NavLink></Button>
         </Nav>
       )}

@@ -28,7 +28,7 @@ function UnauthenticatedApp({ setCurrentUser }) {
         </Route>
         <Redirect to="/" />
       </Switch>
-      <Ro><Image src={"https://i.postimg.cc/nhYLjwPb/Screen-Shot-2022-08-04-at-11-32-03-AM.png"} alt={""}></Image></Ro>
+      {/* <Ro><Image src={"https://i.postimg.cc/nhYLjwPb/Screen-Shot-2022-08-04-at-11-32-03-AM.png"} alt={""}></Image></Ro> */}
       <Rotate>😹</Rotate>
       <Rotate>🍵</Rotate>
       <Rotate>🫣</Rotate>
@@ -86,24 +86,24 @@ const Rotate = styled.div`
   font-size: 3rem;
 `;
 
-const Image = styled.img`
-  display: flex;
-  size: 50%;
-  padding: 2rem 1rem;
-  width: 30%;
-  height: 30%;
-  align-items: center;
-  margin-left: 12rem;
-   @media screen and (max-width: 748px){
-     margin-left: 8.5rem;
-    }
-`;
+// const Image = styled.img`
+//   display: flex;
+//   size: 50%;
+//   padding: 2rem 1rem;
+//   width: 30%;
+//   height: 30%;
+//   align-items: center;
+//   margin-left: 12rem;
+//    @media screen and (max-width: 748px){
+//      margin-left: 8.5rem;
+//     }
+// `;
 
-const Ro = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-`
+// const Ro = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   padding: 0.5rem;
+// `
 
 
 
