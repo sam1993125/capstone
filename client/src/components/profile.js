@@ -1,10 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useHistory } from "react-router";
 import styled from '@emotion/styled'
 
 function Profile({ id, currentUser }) {
-
-
 
 
 
@@ -16,6 +14,10 @@ function Profile({ id, currentUser }) {
         fontSize: '50px',
         textShadow: '5px 5px rgba(22, 33, 33, 0.2)'
       }}>Your Profile</p>
+      <div>
+        <Prgh>Username: {currentUser.username}</Prgh>
+        <Prgh>Name: {currentUser.fullname}</Prgh>
+      </div>
       
     </Container>
   )
@@ -47,6 +49,11 @@ const Button = styled.button`
   }
     }
 }
+`
+const Prgh = styled.p`
+  text-align: justify;
+  margin-right: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
 `
 
 const Input = styled.input`
