@@ -4,8 +4,6 @@ import styled from '@emotion/styled'
 
 function Profile({ id, currentUser }) {
 
-
-
   return (
     <Container>
       <p style={{
@@ -16,9 +14,23 @@ function Profile({ id, currentUser }) {
       }}>Your Profile</p>
       <div>
         <Prgh>Username: {currentUser.username}</Prgh>
+        <Input
+          name="content"
+          rows="1"
+          cols="100"
+          // value={}
+          // onChange={}
+        />
         <Prgh>Name: {currentUser.fullname}</Prgh>
+        <Input
+          name="content"
+          rows="1"
+          cols="30"
+        // value={}
+        // onChange={}
+        />
       </div>
-      
+      <Button style={{ cursor: 'pointer' }}>Edit</Button>
     </Container>
   )
 }
@@ -51,7 +63,7 @@ const Button = styled.button`
 }
 `
 const Prgh = styled.p`
-  text-align: justify;
+  text-align: center;
   margin-right: 30px;
   font-family: 'Roboto Condensed', sans-serif;
 `
@@ -68,7 +80,7 @@ const Input = styled.input`
 `
 
 const Container = styled.div`
-      border-radius: 20px;
+  border-radius: 20px;
   transition: box-shadow 1s;
   padding: 20px;
   background-color: #f5ffe3;

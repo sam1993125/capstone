@@ -10,16 +10,6 @@ function SearchBar({ searchTerm, onSearchChange }) {
         onSearchChange(searchTerm)
     }
 
-    // useEffect(() => {
-    //     const delayDebounceFn = setTimeout(() => {
-    //         console.log(searchTerm)
-    //         onSearchChange(searchTerm)
-    //         onSearchChange("")
-    //     }, 1500)
-    //     return () => clearTimeout(delayDebounceFn)
-    // }, [searchTerm])
-
-
     return (
         <Search onSubmit={handleSubmit}>
             {/* <Title htmlFor="search">Search Slangs:</Title> */}
