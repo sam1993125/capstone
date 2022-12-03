@@ -56,11 +56,11 @@ function AuthenticatedApp({ currentUser, setCurrentUser, fullname }) {
                     </div>
                 </Route>
 
-                <Route exact path="/profile">
+                {/* <Route exact path="/profile">
                     <div>
                         <Profile setCurrentUser={setCurrentUser} currentUser={currentUser} id={currentUser.id} />
                     </div>
-                </Route>
+                </Route> */}
 
                 <Redirect to="/" />
             </Switch>
