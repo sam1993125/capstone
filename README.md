@@ -2,14 +2,18 @@
 
 <!-- ## Watch the [Demo Video]() -->
 
-(Intro)
+Urbandictionary.com is a great place to search and learn English slangs from all over the place. While user can create their definitions of a term, it is impossible so far for registered users to collect their favorite slangs. My Urban Dictionary help users to solve the problems by provide personalize experience with urbandictionary.com. 
 
 ## Deliverables and Stretch Goals
 
-- **MVP**: As a user, I can:
+**MVP**: As a user, I can:
+- Create their own collection of slangs, a function that the original website lacks of, by searching API
+- Comment on the slangs provided by the API
+- Favorite and unfavorite the slangs from API
+- Add slangs of their own choice from the form
  
-- **Stretch**: As a user, I can:
-
+**Stretch**: As a user, I can:
+- Tag slangs into specific categories
 
 ## Models and Relationships / Wireframe
 
