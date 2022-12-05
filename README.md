@@ -1,6 +1,6 @@
-# My Urban Dictionary
+# My Urban Dictionary 📚
 
-<!-- ## Watch the [Demo Video]() -->
+![showcase](/public/showcase.gif)
 
 Urbandictionary.com is a great place to search and learn English slangs from all over the place. While user can create their definitions of a term, it is impossible so far for registered users to collect their favorite slangs. My Urban Dictionary help users to solve the problems by provide personalize experience with urbandictionary.com. 
 
@@ -17,8 +17,8 @@ Urbandictionary.com is a great place to search and learn English slangs from all
 
 ## Models and Relationships / Wireframe
 
-<!-- ![db diagram]()
-![wireframe]() -->
+![db diagram](/public/dbdiagram.png)
+![wireframe](/public/wireframe.png)
 
 ## Instructions for Testing/Updating Production
 
