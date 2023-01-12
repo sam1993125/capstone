@@ -4,6 +4,10 @@ import styled from '@emotion/styled'
 
 function Profile({ id, currentUser }) {
 
+  const handleEdit = () => {
+    
+  }
+
   return (
     <Container>
       <p style={{
